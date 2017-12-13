@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Nov 11 12:13:48 CET 2017
+#Wed Dec 13 20:31:35 CET 2017
 210.set=ANDROID_RESOURCE
 282.file=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\anim\\abc_slide_in_bottom.xml
 14.set=ANDROID_RESOURCE

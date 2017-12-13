@@ -1,7 +1,6 @@
 package com.samuel.altzasuvkaapp;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +9,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -98,9 +105,24 @@ public class GrafyActivity extends AppCompatActivity implements View.OnClickList
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
         content = (TextView) findViewById(R.id.fullscreen_content);
-        content.setText("Tu budú grafy");
+        //content.setText("Graf");
         returnButton = (Button) findViewById(R.id.grafy_button);
         returnButton.setOnClickListener((View.OnClickListener) this);
+        //tu dáta
+        LineChart chart = (LineChart) findViewById(R.id.chart);
+        List<Entry> entries = new ArrayList<Entry>();
+        //tu cyklus naplniť
+        entries.add(new Entry(1,1));
+        entries.add(new Entry(2,2));
+        entries.add(new Entry(4,4));
+        entries.add(new Entry(7,7));
+        entries.add(new Entry(6,6));
+        LineDataSet dataSet = new LineDataSet(entries,"Samkov Dataset");
+        dataSet.setColor(65280);
+        LineData lineData = new LineData(dataSet);
+        chart.setData(lineData);
+        chart.invalidate();
+//
 
 
         // Set up the user interaction to manually show or hide the system UI.
@@ -123,7 +145,7 @@ public class GrafyActivity extends AppCompatActivity implements View.OnClickList
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
         // are available.
-        delayedHide(100);
+        delayedHide(500);
     }
 
     private void toggle() {
@@ -164,7 +186,8 @@ public class GrafyActivity extends AppCompatActivity implements View.OnClickList
      * Schedules a call to hide() in [delay] milliseconds, canceling any
      * previously scheduled calls.
      */
-    private void delayedHide(int delayMillis) {
+    private void delayedHide(int delayMillis)
+    {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }

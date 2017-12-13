@@ -2,13 +2,13 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\Samuel\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.3\92fb46ea210fc3f0ab1125f28b33cf098583e8cf\MPAndroidChart-v3.0.3.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="3b08ddda1ec24561153193344b833c6ab66d414e">
-        <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_481b69a60716da70f9d58cd587629e7e06d7e043\classes.dex" />
+        sha1="92fb46ea210fc3f0ab1125f28b33cf098583e8cf">
+        <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.3_0b0f9e30750976e0993cd9890daf4d77fc5885b5.jar" />
     </item>
     <item
         is-multidex="true"
@@ -18,6 +18,15 @@
         revision="26.0.2"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_46714f818e2bb70d1f54b168fd56acd0ca38b707\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3b08ddda1ec24561153193344b833c6ab66d414e">
+        <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_481b69a60716da70f9d58cd587629e7e06d7e043\classes.dex" />
     </item>
 
 </items>
