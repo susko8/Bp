@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_home"
+        android:icon="@mipmap/ic_home_black_24dp"
+        android:title="Domov"/>
+    <item android:id="@+id/nav_graph"
+        android:icon="@mipmap/ic_call_missed_outgoing_black_24dp"
+        android:title="Grafy"/>
+    <item android:id="@+id/nav_config"
+        android:icon="@mipmap/ic_build_black_24dp"
+        android:title="Nastavenie"/>
+</menu>
