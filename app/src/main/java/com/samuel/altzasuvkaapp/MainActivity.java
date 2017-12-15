@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity
         fm.beginTransaction().replace(R.id.content_frame,new MainFragment()).commit();
     }
 
-    @Override
+   /* @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START))
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
             //
         }
-    }
+    }*/
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -66,7 +66,8 @@ public class MainActivity extends AppCompatActivity
                 fm.beginTransaction().replace(R.id.content_frame,new MainFragment()).commit();
                 break;
             case R.id.nav_config:
-             fm.beginTransaction().replace(R.id.content_frame,new ConfigFragment()).commit();
+             fm.beginTransaction().replace(R.id.content_frame,new ConfigFragment()).addToBackStack("main").commit();
+
                 break;
             case R.id.nav_graph:
                 Intent graphActivity = new Intent(getApplicationContext(), GrafyActivity.class);
@@ -77,5 +78,14 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    @Override
+    public void onBackPressed()
+    {
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

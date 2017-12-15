@@ -22,7 +22,7 @@
         <activity
             android:name=".GrafyActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_grafy"
+            android:label="Zaznamenaná spotreba"
             android:theme="@style/FullscreenTheme"></activity>
     </application>
 

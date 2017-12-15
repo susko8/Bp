@@ -60,7 +60,7 @@ ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\Andr
 activity#com.samuel.altzasuvkaapp.GrafyActivity
 ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:22:9-26:63
 	android:label
-		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:25:13-57
+		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:25:13-49
 	android:configChanges
 		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:24:13-74
 	android:theme

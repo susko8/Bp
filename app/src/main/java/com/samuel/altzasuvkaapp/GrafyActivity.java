@@ -1,6 +1,7 @@
 package com.samuel.altzasuvkaapp;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,8 +10,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -111,16 +112,24 @@ public class GrafyActivity extends AppCompatActivity implements View.OnClickList
         //tu dáta
         LineChart chart = (LineChart) findViewById(R.id.chart);
         List<Entry> entries = new ArrayList<Entry>();
-        //tu cyklus naplniť
+        Description desc =  new Description();
+        desc.setText("Popis");
+        desc.setPosition(150,150);
+        desc.setTextSize(18);
+        //tu cyklus naplniť, pozor treba naplnat asi v poradi
         entries.add(new Entry(1,1));
-        entries.add(new Entry(2,2));
-        entries.add(new Entry(4,4));
-        entries.add(new Entry(7,7));
+        entries.add(new Entry(2,3));
+        entries.add(new Entry(4,2));
         entries.add(new Entry(6,6));
-        LineDataSet dataSet = new LineDataSet(entries,"Samkov Dataset");
-        dataSet.setColor(65280);
+        entries.add(new Entry(7,3));
+        LineDataSet dataSet = new LineDataSet(entries,"Test Dataset");
+        dataSet.setColor(Color.BLACK);
         LineData lineData = new LineData(dataSet);
         chart.setData(lineData);
+        chart.setBackgroundColor(Color.WHITE);
+        chart.setBorderColor(Color.GREEN);
+        chart.setGridBackgroundColor(Color.GREEN);
+        chart.setDescription(desc);
         chart.invalidate();
 //
 
