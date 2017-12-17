@@ -5,7 +5,11 @@
         android:title="Domov"/>
     <item android:id="@+id/nav_graph"
         android:icon="@mipmap/ic_call_missed_outgoing_black_24dp"
-        android:title="Grafy"/>
+        android:title="Graf spotreby"/>
+    <item
+        android:id="@+id/nav_cake"
+        android:icon="@drawable/ic_data_usage_black_24dp"
+        android:title="Graf spotreby celkov"/>
     <item android:id="@+id/nav_config"
         android:icon="@mipmap/ic_build_black_24dp"
         android:title="Nastavenie"/>

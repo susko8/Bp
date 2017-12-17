@@ -100,6 +100,10 @@
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cake_fragment.xml",
+        "source": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\layout\\cake_fragment.xml"
+    },
+    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },

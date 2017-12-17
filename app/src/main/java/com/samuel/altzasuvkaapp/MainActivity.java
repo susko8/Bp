@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.samuel.altzasuvkaapp.fragments.CakeFragment;
 import com.samuel.altzasuvkaapp.fragments.ConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
 
@@ -67,11 +68,13 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_config:
              fm.beginTransaction().replace(R.id.content_frame,new ConfigFragment()).addToBackStack("main").commit();
-
                 break;
             case R.id.nav_graph:
                 Intent graphActivity = new Intent(getApplicationContext(), GrafyActivity.class);
                 startActivity(graphActivity);
+                break;
+            case R.id.nav_cake:
+                fm.beginTransaction().replace(R.id.content_frame,new CakeFragment()).addToBackStack("cake").commit();
                 break;
         }
 

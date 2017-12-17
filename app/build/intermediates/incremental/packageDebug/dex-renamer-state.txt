@@ -1,4 +1,4 @@
-#Fri Dec 15 19:41:07 CET 2017
+#Sun Dec 17 17:21:18 CET 2017
 base.0=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_46714f818e2bb70d1f54b168fd56acd0ca38b707
 renamed.1=classes2.dex
 renamed.0=classes.dex
