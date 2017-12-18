@@ -148,7 +148,8 @@ public class LineChartFragment extends Fragment
             @Override
             public void onNothingSelected(AdapterView<?> parent)
             {
-
+//doNothingMate
+                label.setText("Vyber jednu z možností");
             }
         });
     }

@@ -4,6 +4,7 @@ package com.samuel.altzasuvkaapp.fragments;
 import android.app.Fragment;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Html;
@@ -100,6 +101,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 String text = "Status: <font color='#43A047'>Bluetooth turned ON</font>";
                 status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
                 Id.setText("ID: Device not connected yet");
+                IntentFilter filter = new IntentFilter();
+                /*filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
+                filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);*/
             }
             if(resultCode==RESULT_CANCELED)
             {
