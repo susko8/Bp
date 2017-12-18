@@ -15,9 +15,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.TextView;
 
 import com.samuel.altzasuvkaapp.fragments.CakeFragment;
 import com.samuel.altzasuvkaapp.fragments.ConfigFragment;
+import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -70,8 +73,7 @@ public class MainActivity extends AppCompatActivity
              fm.beginTransaction().replace(R.id.content_frame,new ConfigFragment()).addToBackStack("main").commit();
                 break;
             case R.id.nav_graph:
-                Intent graphActivity = new Intent(getApplicationContext(), GrafyActivity.class);
-                startActivity(graphActivity);
+                fm.beginTransaction().replace(R.id.content_frame,new LineChartFragment()).addToBackStack("line").commit();
                 break;
             case R.id.nav_cake:
                 fm.beginTransaction().replace(R.id.content_frame,new CakeFragment()).addToBackStack("cake").commit();
@@ -87,8 +89,10 @@ public class MainActivity extends AppCompatActivity
     {
         if (getFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentManager().popBackStack();
-        } else {
+        } else
+        {
             super.onBackPressed();
         }
     }
 }
+

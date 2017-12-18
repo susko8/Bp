@@ -6,4 +6,10 @@
     <string name="title_activity_grafy">GrafyActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+        <string-array name="spinnerarray">
+            <item>24 Hodín</item>
+            <item>Posledná hodina</item>
+            <item>Týždeň</item>
+            <item>Mesiac</item>
+        </string-array>
 </resources>

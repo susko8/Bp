@@ -22,11 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".GrafyActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="Zaznamenaná spotreba"
-            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>
