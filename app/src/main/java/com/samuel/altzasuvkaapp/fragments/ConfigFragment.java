@@ -21,14 +21,14 @@ public class ConfigFragment extends Fragment
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);
+        setRetainInstance(true);//uloz instanciu
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
-        View rootView=inflater.inflate(R.layout.config_fragment,container,false);
+        View rootView=inflater.inflate(R.layout.config_fragment,container,false); //inflatni layout
         return rootView;
     }
 }

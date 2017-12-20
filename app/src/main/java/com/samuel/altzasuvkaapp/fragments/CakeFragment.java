@@ -24,15 +24,16 @@ public class CakeFragment extends Fragment
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);
+        setRetainInstance(true); //uloz instanciu
     }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
-        View rootView=inflater.inflate(R.layout.cake_fragment,container,false);
-        PieChart pieChart = (PieChart) rootView.findViewById(R.id.chartcake);
-        List<PieEntry> entries = new ArrayList<>();
+        View rootView=inflater.inflate(R.layout.cake_fragment,container,false); //inflate layout
+        PieChart pieChart = (PieChart) rootView.findViewById(R.id.chartcake); //najdi graf v layoute
+        List<PieEntry> entries = new ArrayList<>(); //graf data
+        //ina grafova magia podla dokumentacie
         entries.add(new PieEntry(18.5f, "prva"));
         entries.add(new PieEntry(26.7f, "druha"));
         entries.add(new PieEntry(24.0f, "tretia"));

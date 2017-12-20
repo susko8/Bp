@@ -1,10 +1,10 @@
 package com.samuel.altzasuvkaapp.fragments;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.XAxis;
@@ -31,21 +29,29 @@ import java.util.Random;
 
 public class LineChartFragment extends Fragment
 {
-    TextView label;
+    TextView label; //nazov grafu podla spinnera
+    Spinner spinner; //spinner
+    int spinposition; //poz. spinnera
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);
+        setRetainInstance(true); //uloz stav fragmentu
+
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
-        View rootView = inflater.inflate(R.layout.line_fragment, container, false);
-       setSpinner(rootView);
+        if (savedInstanceState != null) //ak je nieco v bundli
+        {
+            spinposition = savedInstanceState.getInt("spinner"); //ulozena pozicia spinner, sup ju tam
+        }
+        View rootView = inflater.inflate(R.layout.line_fragment, container, false); //inflate layout
+       setSpinner(rootView); //nastav spinner
         //tu dáta
+        //todo rozumny objekt pre setgrafu a dat
         LineChart chart = (LineChart) rootView.findViewById(R.id.chart);
         List<Entry> entries = new ArrayList<Entry>();
         Description desc = new Description();
@@ -87,7 +93,7 @@ public class LineChartFragment extends Fragment
         yAxisLeft.setDrawGridLines(false);
         yAxisRight.setDrawLabels(false);
         //Limity pre vyznačenie cien prúdov
-        //lacny todo objekt
+        //lacny todo objekt pre drahy a lacny, bude to settovatelne
         LimitLine ll1 = new LimitLine(4f, "Lacný prúd");
         ll1.setLineColor(Color.BLUE);
         ll1.setLineWidth(1f);
@@ -118,14 +124,14 @@ public class LineChartFragment extends Fragment
     }
     public void setSpinner(View rootView)
     {
-        label = (TextView) rootView.findViewById(R.id.label);
+        label = (TextView) rootView.findViewById(R.id.label); // najdi label
         //spinner pre výber
-        Spinner spinner = (Spinner) rootView.findViewById(R.id.spinner);
+        spinner = (Spinner) rootView.findViewById(R.id.spinner); //najdi spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getActivity(),
-                R.array.spinnerarray, android.R.layout.simple_spinner_item);
+                R.array.spinnerarray, android.R.layout.simple_spinner_item); //daj mu array definovany v string.xml
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner.setAdapter(adapter); //prirad adapter
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {//listener a v nom logika
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id)
             {
@@ -149,15 +155,16 @@ public class LineChartFragment extends Fragment
             @Override
             public void onNothingSelected(AdapterView<?> parent)
             {
-                label.setText("Vyber jednu z možností");
+                label.setText("Vyber jednu z možností"); //ak nic nevybrate
             }
         });
+        spinner.setSelection(spinposition); //ak nieco v bundli tak (re)setni
     }
     @Override
     public void onSaveInstanceState(Bundle outState)
     {
         super.onSaveInstanceState(outState);
-
+        outState.putInt("spinner", spinner.getSelectedItemPosition()); //uloz poziciu spinner
     }
 }
 
