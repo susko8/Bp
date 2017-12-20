@@ -24,6 +24,7 @@ public class CakeFragment extends Fragment
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
     @Nullable
     @Override
@@ -49,4 +50,5 @@ public class CakeFragment extends Fragment
         pieChart.invalidate(); //
         return rootView;
     }
+
 }

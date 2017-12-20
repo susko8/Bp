@@ -1,38 +1,32 @@
 package com.samuel.altzasuvkaapp;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
-import android.bluetooth.BluetoothAdapter;
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.TextView;
-
 import com.samuel.altzasuvkaapp.fragments.CakeFragment;
 import com.samuel.altzasuvkaapp.fragments.ConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener
+{
+    int trigger=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -45,22 +39,11 @@ public class MainActivity extends AppCompatActivity
         fm.beginTransaction().replace(R.id.content_frame,new MainFragment()).commit();
     }
 
-   /* @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START))
-        {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-            //
-        }
-    }*/
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
         // Handle navigation view item clicks here.
         FragmentManager fm = getFragmentManager();
         int id = item.getItemId();
@@ -68,22 +51,48 @@ public class MainActivity extends AppCompatActivity
         switch (id){
             case R.id.nav_home:
                 fm.beginTransaction().replace(R.id.content_frame,new MainFragment()).commit();
+                trigger=0;
                 break;
             case R.id.nav_config:
              fm.beginTransaction().replace(R.id.content_frame,new ConfigFragment()).addToBackStack("main").commit();
+                trigger=1;
                 break;
             case R.id.nav_graph:
                 fm.beginTransaction().replace(R.id.content_frame,new LineChartFragment()).addToBackStack("line").commit();
+                trigger=2;
                 break;
             case R.id.nav_cake:
                 fm.beginTransaction().replace(R.id.content_frame,new CakeFragment()).addToBackStack("cake").commit();
+                trigger=3;
                 break;
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void ForRotate()
+    {
+        FragmentManager fm = getFragmentManager();
+        switch (trigger)
+        {
+            case 0:
+                fm.beginTransaction().replace(R.id.content_frame,new MainFragment()).commit();
+                break;
+            case 1:
+                fm.beginTransaction().replace(R.id.content_frame,new ConfigFragment()).addToBackStack("main").commit();
+                break;
+            case 2:
+                fm.beginTransaction().replace(R.id.content_frame,new LineChartFragment()).addToBackStack("line").commit();
+                break;
+            case 3:
+                fm.beginTransaction().replace(R.id.content_frame,new CakeFragment()).addToBackStack("cake").commit();
+                break;
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
+
+
     @Override
     public void onBackPressed()
     {
@@ -93,6 +102,19 @@ public class MainActivity extends AppCompatActivity
         {
             super.onBackPressed();
         }
+    }
+    @Override
+   protected void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
+        outState.putInt("trigger",trigger);
+    }
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState)
+    {
+    super.onRestoreInstanceState(savedInstanceState);
+        trigger=savedInstanceState.getInt("trigger");
+        ForRotate();
     }
 }
 

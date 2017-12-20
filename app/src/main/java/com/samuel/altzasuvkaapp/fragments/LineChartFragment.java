@@ -36,6 +36,7 @@ public class LineChartFragment extends Fragment
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 
     @Nullable
@@ -148,10 +149,15 @@ public class LineChartFragment extends Fragment
             @Override
             public void onNothingSelected(AdapterView<?> parent)
             {
-//doNothingMate
                 label.setText("Vyber jednu z možností");
             }
         });
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
+
     }
 }
 
