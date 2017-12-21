@@ -1,7 +1,7 @@
-#Tue Dec 19 14:02:58 CET 2017
+#Thu Dec 21 19:54:59 CET 2017
 base.0=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_46714f818e2bb70d1f54b168fd56acd0ca38b707
-renamed.1=classes2.dex
-renamed.0=classes.dex
+renamed.1=classes.dex
+renamed.0=classes2.dex
 file.1=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_481b69a60716da70f9d58cd587629e7e06d7e043\\classes.dex
 base.1=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_481b69a60716da70f9d58cd587629e7e06d7e043
 file.0=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_46714f818e2bb70d1f54b168fd56acd0ca38b707\\classes.dex

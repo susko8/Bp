@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/section1_label"
+    >
+    <TextView
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="385dp"
+        android:layout_height="wrap_content"
+        android:text="Nastavenia zásuvky"
+        android:textSize="18dp"
+        android:gravity="center" />
+</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Intenzita Merania:"
+        android:textColor="#000"
+        android:id="@+id/seeker_label"
+        android:layout_below="@id/section1_label"/>
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seeker"
+        android:layout_below="@id/seeker_label"
+        />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <TextView
+   <TextView
+       android:layout_below="@+id/seeker"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:textSize="10dp"
+       android:background="#FFF"
+       android:textColor="#000"
+       android:id="@+id/text"
+       android:text="dummy text"
+       android:layout_margin="5dp"
+       />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text">
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="tu budu nastavenia"/>
+            android:text="Identifikuj zásuvku"
+            android:id="@+id/btn_blink"
+            android:layout_weight="1"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Odošli nastavenia"
+            android:id="@+id/btn_send"
+            android:layout_weight="1"/>
     </LinearLayout>
-</FrameLayout>
+
+
+
+</RelativeLayout>
