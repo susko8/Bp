@@ -16,9 +16,12 @@ import com.samuel.altzasuvkaapp.fragments.ConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
 
+import java.io.Serializable;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener //implementacia bocneho menu
 {
+    public Intervals intervaly = new Intervals();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,16 +48,25 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item)
     {
         FragmentManager fm = getFragmentManager(); //nutne pre nacitavanie fragmentov
+        Bundle data = new Bundle();
+        data.putSerializable("Intervaly", intervaly);
         int id = item.getItemId();
-        switch (id){ //logika menu, podla vybrateho nacitaj fragment
+        switch (id)
+        { //logika menu, podla vybrateho nacitaj fragment
             case R.id.nav_home:
                 fm.beginTransaction().replace(R.id.content_frame,new MainFragment()).commit();
                 break;
             case R.id.nav_config:
-             fm.beginTransaction().replace(R.id.content_frame,new ConfigFragment()).addToBackStack("main").commit();
+
+                ConfigFragment c= new ConfigFragment();
+                c.setArguments(data);
+             fm.beginTransaction().replace(R.id.content_frame,c).addToBackStack("main").commit();
                 break;
             case R.id.nav_graph:
-                fm.beginTransaction().replace(R.id.content_frame,new LineChartFragment()).addToBackStack("line").commit();
+                Bundle dataTwo = new Bundle();
+                LineChartFragment l = new LineChartFragment();
+                l.setArguments(data);
+                fm.beginTransaction().replace(R.id.content_frame,l).addToBackStack("line").commit();
                 break;
             case R.id.nav_cake:
                 fm.beginTransaction().replace(R.id.content_frame,new CakeFragment()).addToBackStack("cake").commit();

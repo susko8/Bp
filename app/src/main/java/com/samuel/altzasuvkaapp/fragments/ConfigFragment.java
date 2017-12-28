@@ -4,15 +4,19 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.NumberPicker;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
 
+import java.nio.BufferUnderflowException;
 
 
 public class ConfigFragment extends Fragment
@@ -21,17 +25,25 @@ public class ConfigFragment extends Fragment
     SeekBar seeker;
     TextView seekerState;
     int defaultProgress=5;
+    NumberPicker CheapFrom;
+    NumberPicker CheapTo;
+    NumberPicker ExpFrom;
+    NumberPicker ExpTo;
+    Intervals intervaly;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
+        Bundle arguments = getArguments();
         super.onCreate(savedInstanceState);
         setRetainInstance(true);//uloz instanciu
+        intervaly = (Intervals) arguments.getSerializable("Intervaly");
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
+        //Log.e("interval", String.valueOf(intervaly.getCheapFrom()));
         if (savedInstanceState != null) //ak je nieco v bundli
         {
             defaultProgress = savedInstanceState.getInt("progress"); //ulozena pozicia spinner, sup ju tam
@@ -68,6 +80,7 @@ public class ConfigFragment extends Fragment
             }
         });
         seekerState=(TextView) rootView.findViewById(R.id.seeker_label);
+        setPickers(rootView);
         return rootView;
     }
     @Override
@@ -75,6 +88,53 @@ public class ConfigFragment extends Fragment
     {
         super.onSaveInstanceState(outState);
         outState.putInt("progress",defaultProgress ); //uloz funguje pri otacani
+    }
+    public void setPickers(View rootView)
+    {
+        CheapTo= (NumberPicker) rootView.findViewById(R.id.cheap_picker_to);
+        CheapFrom=(NumberPicker) rootView.findViewById(R.id.cheap_picker_from);
+        ExpTo=(NumberPicker) rootView.findViewById(R.id.exp_picker_to);
+        ExpFrom=(NumberPicker) rootView.findViewById(R.id.exp_picker_from);
+        CheapTo.setMaxValue(24);
+        CheapFrom.setMaxValue(24);
+        ExpTo.setMaxValue(24);
+        ExpFrom.setMaxValue(24);
+        CheapTo.setMinValue(0);
+        CheapFrom.setMinValue(0);
+        ExpTo.setMinValue(0);
+        ExpFrom.setMinValue(0);
+        CheapFrom.setWrapSelectorWheel(false);
+        CheapTo.setWrapSelectorWheel(false);
+        ExpFrom.setWrapSelectorWheel(false);
+        ExpTo.setWrapSelectorWheel(false);
+        CheapFrom.setValue(intervaly.getCheapFrom());
+        CheapTo.setValue(intervaly.getCheapTo());
+        ExpFrom.setValue(intervaly.getExpFrom());
+        ExpTo.setValue(intervaly.getExpTo());
+        CheapFrom.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+        public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+        intervaly.setCheapFrom(newVal);
+    }
+    });
+        CheapTo.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+    @Override
+    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+        intervaly.setCheapTo(newVal);
+    }
+});
+        ExpFrom.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                intervaly.setExpFrom(newVal);
+            }
+        });
+        ExpTo.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                intervaly.setExpTo(newVal);
+            }
+        });
     }
 
 }

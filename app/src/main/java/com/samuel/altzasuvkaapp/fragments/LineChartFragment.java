@@ -20,6 +20,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
 
 import java.util.ArrayList;
@@ -32,11 +33,14 @@ public class LineChartFragment extends Fragment
     TextView label; //nazov grafu podla spinnera
     Spinner spinner; //spinner
     int spinposition; //poz. spinnera
+    Intervals intervaly;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setRetainInstance(true); //uloz stav fragmentu
+        Bundle arguments = getArguments();
+        intervaly = (Intervals) arguments.getSerializable("Intervaly");
 
     }
 
@@ -94,26 +98,26 @@ public class LineChartFragment extends Fragment
         yAxisRight.setDrawLabels(false);
         //Limity pre vyznačenie cien prúdov
         //lacny todo objekt pre drahy a lacny, bude to settovatelne
-        LimitLine ll1 = new LimitLine(4f, "Lacný prúd");
+        LimitLine ll1 = new LimitLine(intervaly.getCheapFrom(), "Lacný prúd");
         ll1.setLineColor(Color.BLUE);
         ll1.setLineWidth(1f);
         ll1.setTextColor(Color.BLACK);
         ll1.setTextSize(5f);
         xAxis.addLimitLine(ll1);
-        LimitLine ll2 = new LimitLine(8f, "");
+        LimitLine ll2 = new LimitLine(intervaly.getCheapTo(), "");
         ll2.setLineColor(Color.BLUE);
         ll2.setLineWidth(1f);
         ll2.setTextColor(Color.BLACK);
         ll2.setTextSize(5f);
         xAxis.addLimitLine(ll2);
         //drahy
-        LimitLine ll3 = new LimitLine(16f, "Drahý prúd");
+        LimitLine ll3 = new LimitLine(intervaly.getExpFrom(), "Drahý prúd");
         ll3.setLineColor(Color.RED);
         ll3.setLineWidth(1f);
         ll3.setTextColor(Color.BLACK);
         ll3.setTextSize(5f);
         xAxis.addLimitLine(ll3);
-        LimitLine ll4 = new LimitLine(22f, "");
+        LimitLine ll4 = new LimitLine(intervaly.getExpTo(), "");
         ll4.setLineColor(Color.RED);
         ll4.setLineWidth(1f);
         ll4.setTextColor(Color.BLACK);

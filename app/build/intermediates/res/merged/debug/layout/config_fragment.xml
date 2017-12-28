@@ -1,14 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/section2_label"
+        >
+        <TextView
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:layout_width="385dp"
+            android:layout_height="wrap_content"
+            android:text="Nastavenia Aplikácie"
+            android:textSize="18dp"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Lacný prúd"
+            android:padding="10dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Od"
+                android:layout_marginStart="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Do"
+                android:layout_marginStart="210dp"/>
+        <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:id="@+id/cheap_picker_from">
+        </NumberPicker>
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cheap_picker_to"
+            android:layout_marginStart="250dp"
+            >
+        </NumberPicker>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="Drahý prúd"
+            android:padding="10dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Od"
+                android:layout_marginStart="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Do"
+                android:layout_marginStart="210dp"/>
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:id="@+id/exp_picker_from">
+            </NumberPicker>
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/exp_picker_to"
+                android:layout_marginStart="250dp"
+                >
+            </NumberPicker>
+        </RelativeLayout>
+    </LinearLayout>
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/section1_label"
+    android:layout_below="@id/section2_label"
     >
     <TextView
         style="?android:attr/listSeparatorTextViewStyle"
@@ -23,6 +109,7 @@
         android:layout_height="wrap_content"
         android:text=" Intenzita Merania:"
         android:textColor="#000"
+        android:padding="10dp"
         android:id="@+id/seeker_label"
         android:layout_below="@id/section1_label"/>
     <SeekBar
@@ -63,7 +150,5 @@
             android:id="@+id/btn_send"
             android:layout_weight="1"/>
     </LinearLayout>
-
-
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
