@@ -18,7 +18,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/app_logo"
+        android:icon="@mipmap/app_logo_green"
         android:label="Inteligentná zásuvka"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"

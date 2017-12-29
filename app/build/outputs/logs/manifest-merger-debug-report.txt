@@ -48,7 +48,7 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\Samuel\.android
 	android:allowBackup
 		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:9:9-35
 	android:icon
-		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:10:9-40
+		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:10:9-46
 	android:theme
 		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:14:9-40
 activity#com.samuel.altzasuvkaapp.MainActivity

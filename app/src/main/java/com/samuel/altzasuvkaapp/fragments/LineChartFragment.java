@@ -53,76 +53,11 @@ public class LineChartFragment extends Fragment
             spinposition = savedInstanceState.getInt("spinner"); //ulozena pozicia spinner, sup ju tam
         }
         View rootView = inflater.inflate(R.layout.line_fragment, container, false); //inflate layout
-       setSpinner(rootView); //nastav spinner
-        //tu dáta
-        //todo rozumny objekt pre setgrafu a dat
+        setSpinner(rootView); //nastav spinner
         LineChart chart = (LineChart) rootView.findViewById(R.id.chart);
         List<Entry> entries = new ArrayList<Entry>();
-        Description desc = new Description();
-        desc.setText("");
-        //desc.setPosition(150,150);
-        desc.setTextSize(18);
-        //desc.setTextColor(Co);
-        //tu cyklus naplniť, pozor treba naplnat asi v poradi
-        Random randomGenerator = new Random();
-        for (int i = 0; i <= 24; i += 2) {
-            int randomInt = randomGenerator.nextInt(100);
-            entries.add(new Entry(i, randomInt));
-        }
-        //todo week and month podla list view
-        LineDataSet dataSet = new LineDataSet(entries, "Test Dataset");
-        dataSet.setColor(Color.BLACK);
-        dataSet.setCubicIntensity(0.5f);
-        dataSet.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
-        dataSet.setDrawFilled(true);
-        dataSet.setFillColor(Color.parseColor("#43a047"));
-        dataSet.setLineWidth(1f);
-        dataSet.setCircleRadius(2.5f);
-        dataSet.setCircleColor(Color.BLACK);
-        dataSet.setDrawCircleHole(false);
-        LineData lineData = new LineData(dataSet);
-        chart.setData(lineData);
-        chart.setNoDataText("Zatiaľ nenamerané hodnoty");
-        chart.setBackgroundColor(Color.WHITE);
-        chart.setBorderColor(Color.GREEN);
-        chart.setGridBackgroundColor(Color.GREEN);
-        chart.setDescription(desc);
-        chart.setKeepPositionOnRotation(true);
-        XAxis xAxis = chart.getXAxis();
-        xAxis.setTextSize(10f);
-        xAxis.setDrawGridLines(false);
-        xAxis.setDrawLabels(true);
-        YAxis yAxisLeft = chart.getAxisLeft();
-        YAxis yAxisRight = chart.getAxisRight();
-        yAxisLeft.setDrawGridLines(false);
-        yAxisRight.setDrawLabels(false);
-        //Limity pre vyznačenie cien prúdov
-        //lacny todo objekt pre drahy a lacny, bude to settovatelne
-        LimitLine ll1 = new LimitLine(intervaly.getCheapFrom(), "Lacný prúd");
-        ll1.setLineColor(Color.BLUE);
-        ll1.setLineWidth(1f);
-        ll1.setTextColor(Color.BLACK);
-        ll1.setTextSize(5f);
-        xAxis.addLimitLine(ll1);
-        LimitLine ll2 = new LimitLine(intervaly.getCheapTo(), "");
-        ll2.setLineColor(Color.BLUE);
-        ll2.setLineWidth(1f);
-        ll2.setTextColor(Color.BLACK);
-        ll2.setTextSize(5f);
-        xAxis.addLimitLine(ll2);
-        //drahy
-        LimitLine ll3 = new LimitLine(intervaly.getExpFrom(), "Drahý prúd");
-        ll3.setLineColor(Color.RED);
-        ll3.setLineWidth(1f);
-        ll3.setTextColor(Color.BLACK);
-        ll3.setTextSize(5f);
-        xAxis.addLimitLine(ll3);
-        LimitLine ll4 = new LimitLine(intervaly.getExpTo(), "");
-        ll4.setLineColor(Color.RED);
-        ll4.setLineWidth(1f);
-        ll4.setTextColor(Color.BLACK);
-        ll4.setTextSize(5f);
-        xAxis.addLimitLine(ll4);
+        addDataToChart(entries,chart);
+        addLimitLines(chart);
         chart.invalidate();
         return rootView;
     }
@@ -169,6 +104,83 @@ public class LineChartFragment extends Fragment
     {
         super.onSaveInstanceState(outState);
         outState.putInt("spinner", spinner.getSelectedItemPosition()); //uloz poziciu spinner
+    }
+    public void styleChart(LineChart chart)
+    {
+        Description desc = new Description();
+        desc.setText("");
+        //desc.setPosition(150,150);
+        desc.setTextSize(18);
+        //desc.setTextColor(Co);
+        chart.setNoDataText("Zatiaľ nenamerané hodnoty");
+        chart.setBackgroundColor(Color.WHITE);
+        chart.setBorderColor(Color.GREEN);
+        chart.setGridBackgroundColor(Color.GREEN);
+        chart.setDescription(desc);
+        chart.setKeepPositionOnRotation(true);
+    }
+    public void addDataToChart(List<Entry> entries,LineChart chart)
+    {
+        //todo rozumny objekt pre setgrafu a dat
+        //todo week and month podla list view
+        Random randomGenerator = new Random();
+        //tu cyklus naplniť, pozor treba naplnat asi v poradi
+        for (int i = 0; i <= 24; i += 2) {
+            int randomInt = randomGenerator.nextInt(100);
+            entries.add(new Entry(i, randomInt));
+        }
+        LineDataSet dataSet = new LineDataSet(entries, "Test Dataset");
+        dataSet.setColor(Color.BLACK);
+        dataSet.setCubicIntensity(0.5f);
+        dataSet.setMode(LineDataSet.Mode.HORIZONTAL_BEZIER);
+        dataSet.setDrawFilled(true);
+        dataSet.setFillColor(Color.parseColor("#43a047"));
+        dataSet.setLineWidth(1f);
+        dataSet.setCircleRadius(2.5f);
+        dataSet.setCircleColor(Color.BLACK);
+        dataSet.setDrawCircleHole(false);
+        LineData lineData = new LineData(dataSet);
+        chart.setData(lineData);
+    }
+    public void addLimitLines(LineChart chart)
+    {
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setTextSize(10f);
+        xAxis.setDrawGridLines(false);
+        xAxis.setDrawLabels(true);
+        YAxis yAxisLeft = chart.getAxisLeft();
+        YAxis yAxisRight = chart.getAxisRight();
+        yAxisLeft.setDrawGridLines(false);
+        yAxisRight.setDrawLabels(false);
+        //Limity pre vyznačenie cien prúdov
+        //lacny dolny
+        LimitLine ll1 = new LimitLine(intervaly.getCheapFrom(), "Lacný prúd");
+        ll1.setLineColor(Color.BLUE);
+        ll1.setLineWidth(1f);
+        ll1.setTextColor(Color.BLACK);
+        ll1.setTextSize(5f);
+        xAxis.addLimitLine(ll1);
+        //lacny horny
+        LimitLine ll2 = new LimitLine(intervaly.getCheapTo(), "");
+        ll2.setLineColor(Color.BLUE);
+        ll2.setLineWidth(1f);
+        ll2.setTextColor(Color.BLACK);
+        ll2.setTextSize(5f);
+        xAxis.addLimitLine(ll2);
+        //drahy dolny
+        LimitLine ll3 = new LimitLine(intervaly.getExpFrom(), "Drahý prúd");
+        ll3.setLineColor(Color.RED);
+        ll3.setLineWidth(1f);
+        ll3.setTextColor(Color.BLACK);
+        ll3.setTextSize(5f);
+        xAxis.addLimitLine(ll3);
+        //drahy horny
+        LimitLine ll4 = new LimitLine(intervaly.getExpTo(), "");
+        ll4.setLineColor(Color.RED);
+        ll4.setLineWidth(1f);
+        ll4.setTextColor(Color.BLACK);
+        ll4.setTextSize(5f);
+        xAxis.addLimitLine(ll4);
     }
 }
 

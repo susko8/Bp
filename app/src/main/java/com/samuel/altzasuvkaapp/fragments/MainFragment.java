@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
     Button connectButton; //button na pripojenie
+    FloatingActionButton btTrigger;
     TextView Id;
     TextView status;
     BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter(); //deklaracia Bt adaptera telefonu
@@ -60,8 +62,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         connectButton = (Button) view.findViewById(R.id.connect_button); //najdi button
         connectButton.setOnClickListener(this); //daj mu listener
         status.setText("Status: Disconnected"); //daj mu default text
+        btTrigger = (FloatingActionButton) view.findViewById(R.id.floatingActionButton);
+        btTrigger.setOnClickListener(this);
         //BT Check
-
         if (mBluetoothAdapter == null) //ak nie je v telefone adapter
         {
             status.setText("Your device doesn´t support Bluetooth");
@@ -79,12 +82,17 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        if (v == connectButton) {
-            if (!mBluetoothAdapter.isEnabled()) { //po stlaceni buttonu BT magia
+        if (v == btTrigger) {
+            if (!mBluetoothAdapter.isEnabled())
+            { //po stlaceni buttonu BT magia
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
                 onActivityResult(REQUEST_ENABLE_BT, RESULT_OK, enableBtIntent);
             }
+        }
+        if (v == connectButton)
+        {
+            //todo
         }
     }
 

@@ -16,8 +16,6 @@ import com.samuel.altzasuvkaapp.fragments.ConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
 
-import java.io.Serializable;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener //implementacia bocneho menu
 {
@@ -63,7 +61,6 @@ public class MainActivity extends AppCompatActivity
              fm.beginTransaction().replace(R.id.content_frame,c).addToBackStack("main").commit();
                 break;
             case R.id.nav_graph:
-                Bundle dataTwo = new Bundle();
                 LineChartFragment l = new LineChartFragment();
                 l.setArguments(data);
                 fm.beginTransaction().replace(R.id.content_frame,l).addToBackStack("line").commit();
@@ -89,6 +86,7 @@ public class MainActivity extends AppCompatActivity
     @Override
    protected void onSaveInstanceState(Bundle outState)
     {
+
         super.onSaveInstanceState(outState);
     }
     @Override
