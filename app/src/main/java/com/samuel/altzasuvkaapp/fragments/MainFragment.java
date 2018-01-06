@@ -3,8 +3,10 @@ package com.samuel.altzasuvkaapp.fragments;
 
 import android.app.Fragment;
 import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import com.google.gson.Gson;
+import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
 import org.w3c.dom.Text;
 
@@ -31,9 +35,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     //pidy na ktorych bezi BT, budu pribudat
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState)
+    {
+        Bundle arguments = getArguments();
         super.onCreate(savedInstanceState);
-        setRetainInstance(true); //uloz stav fragmentu do pamate
+        setRetainInstance(true);//uloz instanciu
     }
     @Override
     public void onStart()
@@ -43,11 +49,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         {
             String text = "Status: <font color='#43A047'>Bluetooth turned ON</font>";
             status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
-            Id.setText("ID: Device not connected yet");
+            Id.setText("ID: Nepripojená žiadna zásuvka");
         }
         else
         {
-            status.setText("Status: Disconnected"); //ak nie je tiez daj vediet
+            status.setText("Status: Nepripojené"); //ak nie je tiez daj vediet
             Id.setText("ID:");
         }
     }
@@ -61,7 +67,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         Id = (TextView) view.findViewById(R.id.device_id); //najdi Id
         connectButton = (Button) view.findViewById(R.id.connect_button); //najdi button
         connectButton.setOnClickListener(this); //daj mu listener
-        status.setText("Status: Disconnected"); //daj mu default text
+        status.setText("Status: Nepripojené "); //daj mu default text
         btTrigger = (FloatingActionButton) view.findViewById(R.id.floatingActionButton);
         btTrigger.setOnClickListener(this);
         //BT Check
@@ -74,7 +80,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         {
             String text = "Status: <font color='#43A047'>Bluetooth turned ON</font>";
             status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
-            Id.setText("ID: Device not connected yet");
+            Id.setText("ID: Nepripojená žiadna zásuvka");
         }
         return view;
     }
@@ -110,9 +116,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                String text = "Status: <font color='#43A047'>Bluetooth turned ON</font>"; //daj mi vediet ze bol
+                String text = "Status: <font color='#43A047'>Bluetooth je zapnutý</font>"; //daj mi vediet ze bol
                 status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
-                Id.setText("ID: Device not connected yet");
+                Id.setText("ID: Nepripojená žiadna zásuvka");
                 IntentFilter filter = new IntentFilter(); //todo intent pre hladanie realnych deviceov
                 /*filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
                 filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);*/

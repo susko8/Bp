@@ -35,16 +35,29 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Device ID:"
+            android:text="ID:"
             android:id="@+id/device_id"
             />
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="connect"
-            android:layout_gravity="center"
-            android:id="@+id/connect_button"
+            android:layout_marginTop="25dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pripoj zásuvku"
+                android:id="@+id/connect_button"
+                android:layout_weight="2"
             />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Umiestni zásuvku"
+                android:id="@+id/place_button"
+                android:clickable="false"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
     </LinearLayout>
     </RelativeLayout>
 

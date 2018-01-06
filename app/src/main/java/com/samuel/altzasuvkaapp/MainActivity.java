@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item)
     {
         FragmentManager fm = getFragmentManager(); //nutne pre nacitavanie fragmentov
+        int id = item.getItemId();
         Bundle data = new Bundle();
         data.putSerializable("Intervaly", intervaly);
-        int id = item.getItemId();
         switch (id)
         { //logika menu, podla vybrateho nacitaj fragment
             case R.id.nav_home:

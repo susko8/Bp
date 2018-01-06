@@ -1,6 +1,8 @@
 package com.samuel.altzasuvkaapp.fragments;
 
 import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,6 +22,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.google.gson.Gson;
 import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
 
@@ -41,6 +44,7 @@ public class LineChartFragment extends Fragment
         setRetainInstance(true); //uloz stav fragmentu
         Bundle arguments = getArguments();
         intervaly = (Intervals) arguments.getSerializable("Intervaly");
+        RetrieveSettings();
 
     }
 
@@ -181,6 +185,16 @@ public class LineChartFragment extends Fragment
         ll4.setTextColor(Color.BLACK);
         ll4.setTextSize(5f);
         xAxis.addLimitLine(ll4);
+    }
+    public void RetrieveSettings()
+    {
+        SharedPreferences sharedPref = getActivity().getSharedPreferences("settings", Context.MODE_APPEND);
+        if(sharedPref.contains("Intervaly"))
+        {
+            Gson gson = new Gson();
+            String json = sharedPref.getString("Intervaly", "");
+            intervaly = gson.fromJson(json, Intervals.class);
+        }
     }
 }
 

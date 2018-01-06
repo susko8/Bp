@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="15sp"
-        android:text="Ústav elektoniky a fotoniky"
+        android:text="Ústav elektroniky a fotoniky"
         android:textColor="#E8F5E9"
         />
 </FrameLayout>

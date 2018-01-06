@@ -2,6 +2,8 @@ package com.samuel.altzasuvkaapp.fragments;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.widget.NumberPicker;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
 
@@ -37,6 +40,7 @@ public class ConfigFragment extends Fragment
         super.onCreate(savedInstanceState);
         setRetainInstance(true);//uloz instanciu
         intervaly = (Intervals) arguments.getSerializable("Intervaly");
+        RetrieveSettings();
     }
 
     @Nullable
@@ -115,26 +119,50 @@ public class ConfigFragment extends Fragment
             @Override
         public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
         intervaly.setCheapFrom(newVal);
+                saveSettings();
     }
     });
         CheapTo.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
         intervaly.setCheapTo(newVal);
+        saveSettings();
     }
 });
         ExpFrom.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 intervaly.setExpFrom(newVal);
+                saveSettings();
             }
         });
         ExpTo.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 intervaly.setExpTo(newVal);
+                saveSettings();
             }
         });
+
+    }
+    public void saveSettings()
+    {
+        SharedPreferences sharedPref = getActivity().getSharedPreferences("settings", Context.MODE_APPEND);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(intervaly);
+        editor.putString("Intervaly",json);
+        editor.apply();
+    }
+    public void RetrieveSettings()
+    {
+        SharedPreferences sharedPref = getActivity().getSharedPreferences("settings", Context.MODE_APPEND);
+        if(sharedPref.contains("Intervaly"))
+        {
+            Gson gson = new Gson();
+            String json = sharedPref.getString("Intervaly", "");
+            intervaly = gson.fromJson(json, Intervals.class);
+        }
     }
 
 }

@@ -2,6 +2,15 @@
 <items version="2" >
 
     <item
+        is-multidex="true"
+        jar="C:\Users\Samuel\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_91af08a067b2899b8ee3710b53638d9ec7bb5227\classes.dex" />
+    </item>
+    <item
         is-multidex="false"
         jar="C:\Users\Samuel\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.3\92fb46ea210fc3f0ab1125f28b33cf098583e8cf\MPAndroidChart-v3.0.3.jar"
         jumboMode="false"
