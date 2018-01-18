@@ -1900,11 +1900,11 @@
         <attr format="reference" name="metaButtonBarStyle"/>
         <attr format="reference" name="metaButtonBarButtonStyle"/>
     </declare-styleable></file><file path="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\res\values\colors.xml" qualifiers=""><color name="panel">#43a047</color><color name="black_overlay">#66000000</color><color name="background_material_light">#f1f1f1</color><color name="colorPrimaryDark">#303F9F</color><color name="colorPrimary">#3F51B5</color><color name="colorAccent">#FF4081</color></file><file path="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\res\values\dimens.xml" qualifiers=""><dimen name="activity_vertical_margin">16dp</dimen><dimen name="nav_header_height">160dp</dimen><dimen name="activity_horizontal_margin">16dp</dimen><dimen name="nav_header_vertical_spacing">16dp</dimen><dimen name="fab_margin">16dp</dimen></file><file path="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\res\values\drawables.xml" qualifiers=""><item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item><item name="ic_menu_camera" type="drawable">@android:drawable/ic_menu_camera</item><item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item><item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item><item name="ic_menu_gallery" type="drawable">@android:drawable/ic_menu_gallery</item><item name="ic_menu_slideshow" type="drawable">@android:drawable/ic_menu_slideshow</item></file><file path="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\res\values\strings.xml" qualifiers=""><string-array name="spinnerarray">
-            <item>24 Hodín</item>
-            <item>Posledná hodina</item>
-            <item>Týždeň</item>
-            <item>Mesiac</item>
-        </string-array><string name="dummy_button">Dummy Button</string><string name="action_settings">Settings</string><string name="app_name">AltZasuvkaApp</string><string name="navigation_drawer_close">Close navigation drawer</string><string name="title_activity_grafy">GrafyActivity</string><string name="navigation_drawer_open">Open navigation drawer</string><string name="dummy_content">DUMMY\nCONTENT</string></file><file path="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item>24 Hodín</item>
+        <item>Posledná hodina</item>
+        <item>Týždeň</item>
+        <item>Mesiac</item>
+    </string-array><string name="dummy_button">Dummy Button</string><string name="action_settings">Settings</string><string name="app_name">AltZasuvkaApp</string><string name="navigation_drawer_close">Close navigation drawer</string><string name="title_activity_grafy">GrafyActivity</string><string name="navigation_drawer_open">Open navigation drawer</string><string name="dummy_content">DUMMY\nCONTENT</string></file><file path="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\res\values\styles.xml" qualifiers=""><style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         
         <item name="colorPrimary">@color/panel</item>
         <item name="colorPrimaryDark">@color/panel</item>

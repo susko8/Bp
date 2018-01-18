@@ -3,29 +3,11 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Samuel\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
-        <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_91af08a067b2899b8ee3710b53638d9ec7bb5227\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Samuel\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v3.0.3\92fb46ea210fc3f0ab1125f28b33cf098583e8cf\MPAndroidChart-v3.0.3.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="92fb46ea210fc3f0ab1125f28b33cf098583e8cf">
-        <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v3.0.3_0b0f9e30750976e0993cd9890daf4d77fc5885b5.jar" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="aa55e666922c6a3029349d8de1261a59c88df77c">
+        sha1="3cb245a87c3e449a898035ff071c38427451f720">
         <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_481b69a60716da70f9d58cd587629e7e06d7e043\classes.dex" />
     </item>
     <item

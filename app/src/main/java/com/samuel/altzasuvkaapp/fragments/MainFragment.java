@@ -3,12 +3,15 @@ package com.samuel.altzasuvkaapp.fragments;
 
 import android.app.Fragment;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringDef;
 import android.support.design.widget.FloatingActionButton;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -16,11 +19,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import com.google.gson.Gson;
-import com.samuel.altzasuvkaapp.Intervals;
-import com.samuel.altzasuvkaapp.R;
-import org.w3c.dom.Text;
+import android.widget.Toast;
 
+import com.samuel.altzasuvkaapp.R;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
@@ -29,23 +31,73 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     TextView Id;
     TextView status;
     BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter(); //deklaracia Bt adaptera telefonu
+    public ArrayList<BluetoothDevice> mBTDevices=new ArrayList<>();
     private static final int REQUEST_ENABLE_BT = 1;
     private static final int RESULT_OK = 2;
     private static final int RESULT_CANCELED=0; //musi byt 0
+    private boolean connectedstatus=false;
     //pidy na ktorych bezi BT, budu pribudat
+    private final BroadcastReceiver BTReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+
+            if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action))
+            {
+                connectedstatus=true;
+                setConnectedStatus(connectedstatus);
+                Toast toast = Toast.makeText(context,"Device Connected, You can fully use App now!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+            else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action))
+            {
+            connectedstatus=false;
+              setConnectedStatus(connectedstatus);
+            }
+        }
+    };
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
-        Bundle arguments = getArguments();
         super.onCreate(savedInstanceState);
         setRetainInstance(true);//uloz instanciu
+        IntentFilter filter1 = new IntentFilter(BluetoothDevice.ACTION_ACL_CONNECTED);
+        IntentFilter filter2 = new IntentFilter(BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED);
+        IntentFilter filter3 = new IntentFilter(BluetoothDevice.ACTION_ACL_DISCONNECTED);
+        this.getActivity().registerReceiver(BTReceiver, filter1);
+        this.getActivity().registerReceiver(BTReceiver, filter2);
+        this.getActivity().registerReceiver(BTReceiver, filter3);
     }
     @Override
     public void onStart()
     {
         super.onStart();
-        if (mBluetoothAdapter.isEnabled()) //ak je adapter zapnuty daj vediet
+       if (mBluetoothAdapter.isEnabled()) //ak je adapter zapnuty daj vediet
+        {
+            String text = "Status: <font color='#43A047'>Bluetooth turned ON</font>";
+            status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
+            Id.setText("ID: Nepripojená žiadna zásuvka");
+            if(connectedstatus)
+            {
+                setConnectedStatus(connectedstatus);
+            }
+        }
+        else
+        {
+            status.setText("Status: Nepripojené"); //ak nie je tiez daj vediet
+            Id.setText("ID:");
+        }
+    }
+    public void setConnectedStatus(boolean connectedstatus)
+    {
+        if(connectedstatus)
+        {
+            Id.setText("ID: XX:XX:XX:XX:XX ");
+            String text = "Status: <font color='#43A047'>Connected</font>";
+            status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
+        }
+        else if (mBluetoothAdapter.isEnabled()) //ak je adapter zapnuty daj vediet
         {
             String text = "Status: <font color='#43A047'>Bluetooth turned ON</font>";
             status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
@@ -57,7 +109,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             Id.setText("ID:");
         }
     }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -70,6 +121,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         status.setText("Status: Nepripojené "); //daj mu default text
         btTrigger = (FloatingActionButton) view.findViewById(R.id.floatingActionButton);
         btTrigger.setOnClickListener(this);
+        if (savedInstanceState != null) //ak je nieco v bundli
+        {
+            connectedstatus = savedInstanceState.getBoolean("connectedstatus");
+            setConnectedStatus(connectedstatus);
+        }
         //BT Check
         if (mBluetoothAdapter == null) //ak nie je v telefone adapter
         {
@@ -98,7 +154,24 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         }
         if (v == connectButton)
         {
-            //todo
+           if(mBluetoothAdapter.isEnabled())
+           {
+               Intent intent = new Intent (Intent.ACTION_MAIN,null);
+               intent.addCategory(Intent.CATEGORY_LAUNCHER);
+               ComponentName cn = new ComponentName("com.android.settings",
+                       "com.android.settings.bluetooth.BluetoothSettings");
+               intent.setComponent(cn);
+               intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+               startActivity(intent);
+           }
+           else
+           {
+               Context context = this.getActivity().getApplicationContext();
+               Toast toast = Toast.makeText(context,"Bluetooth Disabled, cannot access activity", Toast.LENGTH_SHORT);
+               toast.show();
+           }
+
+
         }
     }
 
@@ -120,8 +193,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
                 Id.setText("ID: Nepripojená žiadna zásuvka");
                 IntentFilter filter = new IntentFilter(); //todo intent pre hladanie realnych deviceov
-                /*filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
-                filter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);*/
             }
             if(resultCode==RESULT_CANCELED)
             {
@@ -129,5 +200,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 Id.setText("ID: ");
             }
         }
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("connectedstatus", connectedstatus); //uloz poziciu spinner
     }
 }

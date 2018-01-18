@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +53,7 @@ public class LineChartFragment extends Fragment
     {
         if (savedInstanceState != null) //ak je nieco v bundli
         {
-            spinposition = savedInstanceState.getInt("spinner"); //ulozena pozicia spinner, sup ju tam
+        spinposition = savedInstanceState.getInt("spinner"); //ulozena pozicia spinner, sup ju tam
         }
         View rootView = inflater.inflate(R.layout.line_fragment, container, false); //inflate layout
         setSpinner(rootView); //nastav spinner
