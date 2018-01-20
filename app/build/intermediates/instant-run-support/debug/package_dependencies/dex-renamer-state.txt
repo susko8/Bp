@@ -1,4 +1,4 @@
-#Thu Jan 18 11:11:47 CET 2018
+#Fri Jan 19 16:50:46 CET 2018
 file.2=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\constraint-layout-solver-1.0.2_0e2b2300034ec40804186472fc52fdc310531903\\classes.dex
 base.2=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\constraint-layout-solver-1.0.2_0e2b2300034ec40804186472fc52fdc310531903
 file.1=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_5dc98d0f6e53a393d95cf86a93b267c7fa5140e1\\classes.dex
