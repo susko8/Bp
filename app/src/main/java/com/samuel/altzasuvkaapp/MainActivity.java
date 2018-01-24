@@ -1,6 +1,7 @@
 package com.samuel.altzasuvkaapp;
 
 
+import android.Manifest;
 import android.app.Dialog;
 import android.app.FragmentManager;
 import android.bluetooth.BluetoothAdapter;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity
     private static final int RESULT_OK = 2;
     private static final int RESULT_CANCELED = 0; //musi byt 0
     private static final long SCAN_PERIOD = 10000;
+    private static final int PERMISSION_REQUEST_COARSE_LOCATION = 1;
     ArrayList<BTDevice> devices = new ArrayList<>();
     //premenne interfacu
     public Intervals intervaly = new Intervals();
@@ -118,7 +120,20 @@ public class MainActivity extends AppCompatActivity
         registerReceiver(BTReceiver, filter1);
         registerReceiver(BTReceiver, filter2);
         registerReceiver(BTReceiver, filter3);
-
+        // Make sure we have access coarse location enabled, if not, prompt the user to enable it
+        if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+            builder.setTitle("This app needs location access");
+            builder.setMessage("Please grant location access so this app can detect peripherals.");
+            builder.setPositiveButton(android.R.string.ok, null);
+            builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
+                }
+            });
+            builder.show();
+        }
     }
 
     @Override
@@ -138,7 +153,30 @@ public class MainActivity extends AppCompatActivity
             mainFragment.setDisabledStatus();
         }
     }
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_REQUEST_COARSE_LOCATION: {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                } else {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setTitle("Functionality limited");
+                    builder.setMessage("Since location access has not been granted, this app will not be able to discover beacons when in the background.");
+                    builder.setPositiveButton(android.R.string.ok, null);
+                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
 
+                        @Override
+                        public void onDismiss(DialogInterface dialog) {
+                        }
+
+                    });
+                    builder.show();
+                }
+                return;
+            }
+        }
+    }
     public void onActivityResult(int requestCode, int resultCode, Intent data)  //Override metoda aby bolo jasny aky vysledok z nej bol
     {
         super.onActivityResult(requestCode, resultCode, data);

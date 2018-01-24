@@ -6,22 +6,22 @@
     density="xhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1516800108274"
+    timestamp="1516802080152"
     token="-7327944600211138781"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="329" />
+        duration="575" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="50" />
+        duration="100" />
     <task
         name="verifier"
-        duration="15" />
+        duration="60" />
 
     <artifact
         location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
@@ -32,7 +32,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1516798694686"
+        timestamp="1516802013518"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
@@ -73,15 +73,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1516799888206"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\outputs\apk\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1516800108274"
+        timestamp="1516802080152"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
