@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\popup_menu.xml",
+        "source": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\menu\\popup_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
         "source": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
     }

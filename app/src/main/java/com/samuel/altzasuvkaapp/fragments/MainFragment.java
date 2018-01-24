@@ -2,6 +2,7 @@ package com.samuel.altzasuvkaapp.fragments;
 
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +52,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         status.setText("Status: Nepripojené "); //daj mu default text
         Id.setText("ID:");
     }
+    public void setId(String string)
+    {
+        Id.setText(string);
+    }
     public void setNoBtStatus()
     {
         status.setText("Your device doesn´t support Bluetooth");
@@ -86,7 +92,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         }
         if (v == connectButton)
         {
-            myactivity.openBluetoothMenu();
+            try {
+                myactivity.openBluetoothMenu();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

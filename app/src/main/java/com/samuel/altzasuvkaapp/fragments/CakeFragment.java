@@ -24,7 +24,7 @@ public class CakeFragment extends Fragment
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true); //uloz instanciu
+        setRetainInstance(true);//uloz instanciu
     }
     @Nullable
     @Override

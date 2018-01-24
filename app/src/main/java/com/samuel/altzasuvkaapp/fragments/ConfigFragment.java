@@ -1,25 +1,19 @@
 package com.samuel.altzasuvkaapp.fragments;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.NumberPicker;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
 import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
-
-import java.nio.BufferUnderflowException;
 
 
 public class ConfigFragment extends Fragment

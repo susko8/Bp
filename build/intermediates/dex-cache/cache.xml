@@ -2,12 +2,21 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="C:\Users\Samuel\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\pre-dexed\debug\gson-2.7_91af08a067b2899b8ee3710b53638d9ec7bb5227.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="7f51840e33e3e385d1174bfd5ed07bd0c897179a">
+        sha1="f1319de13f7fd4125abaa9715a1d143356e5a05a">
         <dex dex="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_481b69a60716da70f9d58cd587629e7e06d7e043\classes.dex" />
     </item>
     <item

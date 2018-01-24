@@ -28,10 +28,6 @@
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
-    },
-    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
@@ -46,10 +42,6 @@
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\anim\\design_fab_out.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",

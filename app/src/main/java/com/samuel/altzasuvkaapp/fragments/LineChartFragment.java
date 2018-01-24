@@ -52,15 +52,14 @@ public class LineChartFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
         if (savedInstanceState != null) //ak je nieco v bundli
-        {
-        spinposition = savedInstanceState.getInt("spinner"); //ulozena pozicia spinner, sup ju tam
-        }
+            spinposition = savedInstanceState.getInt("spinner"); //ulozena pozicia spinner, sup ju tam
         View rootView = inflater.inflate(R.layout.line_fragment, container, false); //inflate layout
         setSpinner(rootView); //nastav spinner
         LineChart chart = (LineChart) rootView.findViewById(R.id.chart);
         List<Entry> entries = new ArrayList<Entry>();
         addDataToChart(entries,chart);
         addLimitLines(chart);
+        styleChart(chart);
         chart.invalidate();
         return rootView;
     }

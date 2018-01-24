@@ -4,10 +4,6 @@
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_password_eye.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\drawable\\design_password_eye.xml"
-    },
-    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\drawable\\abc_btn_radio_material.xml"
     },
@@ -34,10 +30,6 @@
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
@@ -100,12 +92,12 @@
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\drawable\\design_fab_background.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_data_usage_black_24dp.xml",
+        "source": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\drawable\\ic_data_usage_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\drawable\\abc_btn_colored_material.xml"
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
@@ -146,10 +138,6 @@
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\drawable\\design_bottom_navigation_item_background.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
