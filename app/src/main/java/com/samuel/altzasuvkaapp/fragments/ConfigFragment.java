@@ -44,43 +44,7 @@ public class ConfigFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
-        //Log.e("interval", String.valueOf(intervaly.getCheapFrom()));
-        if (savedInstanceState != null) //ak je nieco v bundli
-        {
-            defaultProgress = savedInstanceState.getInt("progress"); //ulozena pozicia spinner, sup ju tam
-        }
         View rootView=inflater.inflate(R.layout.config_fragment,container,false); //inflatni layout
-        instructions=(TextView) rootView.findViewById(R.id.text);
-        instructions.setText("TIP: Pred odoslaním nastavení do zásuvky sa odporúča si ju najprv identifikovať. Po stlačení " +
-                "tlačidla sa na zásuvke rozbliká sveteľná dióda.");
-        seeker = (SeekBar) rootView.findViewById(R.id.seeker);
-        seeker.incrementProgressBy(5);
-        seeker.setMax(65);
-        seeker.setProgress(defaultProgress);
-        seekerState=(TextView) rootView.findViewById(R.id.seeker_label);
-        seekerState.setText("Intenzita merania: "+ defaultProgress+" min");
-        seeker.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser)
-            {
-                progress = progress / 5;
-                progress = progress * 5;
-                progress=progress+5;
-                defaultProgress=progress;
-            seekerState.setText("Intenzita merania: "+ progress+" min");
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-        seekerState=(TextView) rootView.findViewById(R.id.seeker_label);
         setPickers(rootView);
         return rootView;
     }
@@ -88,7 +52,6 @@ public class ConfigFragment extends Fragment
     public void onSaveInstanceState(Bundle outState)
     {
         super.onSaveInstanceState(outState);
-        outState.putInt("progress",defaultProgress ); //uloz funguje pri otacani
     }
     public void setPickers(View rootView)
     {

@@ -1,5 +1,6 @@
 package com.samuel.altzasuvkaapp.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,6 +14,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.LimitLine;
@@ -21,6 +24,7 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.highlight.Highlight;
 import com.google.gson.Gson;
 import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
@@ -60,6 +64,8 @@ public class LineChartFragment extends Fragment
         addDataToChart(entries,chart);
         addLimitLines(chart);
         styleChart(chart);
+        chart.setHardwareAccelerationEnabled(true);
+        chart.animateX(500, Easing.EasingOption.EaseInOutSine);
         chart.invalidate();
         return rootView;
     }
@@ -158,35 +164,40 @@ public class LineChartFragment extends Fragment
         //lacny dolny
         LimitLine ll1 = new LimitLine(intervaly.getCheapFrom(), "Lacný prúd");
         ll1.setLineColor(Color.BLUE);
-        ll1.setLineWidth(1f);
+        ll1.setLineWidth(3f);
         ll1.setTextColor(Color.BLACK);
-        ll1.setTextSize(5f);
+        ll1.setTextSize(12f);
+        ll1.setTextColor(Color.BLUE);
+        ll1.setLabelPosition(LimitLine.LimitLabelPosition.LEFT_BOTTOM);
         xAxis.addLimitLine(ll1);
         //lacny horny
         LimitLine ll2 = new LimitLine(intervaly.getCheapTo(), "");
         ll2.setLineColor(Color.BLUE);
-        ll2.setLineWidth(1f);
+        ll2.setLineWidth(3f);
         ll2.setTextColor(Color.BLACK);
         ll2.setTextSize(5f);
         xAxis.addLimitLine(ll2);
         //drahy dolny
         LimitLine ll3 = new LimitLine(intervaly.getExpFrom(), "Drahý prúd");
         ll3.setLineColor(Color.RED);
-        ll3.setLineWidth(1f);
+        ll3.setLineWidth(3f);
         ll3.setTextColor(Color.BLACK);
         ll3.setTextSize(5f);
         xAxis.addLimitLine(ll3);
+        ll3.setTextSize(12f);
+        ll3.setTextColor(Color.RED);
+        ll3.setLabelPosition(LimitLine.LimitLabelPosition.LEFT_BOTTOM);
         //drahy horny
         LimitLine ll4 = new LimitLine(intervaly.getExpTo(), "");
         ll4.setLineColor(Color.RED);
-        ll4.setLineWidth(1f);
+        ll4.setLineWidth(3f);
         ll4.setTextColor(Color.BLACK);
         ll4.setTextSize(5f);
         xAxis.addLimitLine(ll4);
     }
     public void RetrieveSettings()
     {
-        SharedPreferences sharedPref = getActivity().getSharedPreferences("settings", Context.MODE_APPEND);
+        @SuppressLint("WrongConstant") SharedPreferences sharedPref = getActivity().getSharedPreferences("settings", Context.MODE_APPEND);
         if(sharedPref.contains("Intervaly"))
         {
             Gson gson = new Gson();

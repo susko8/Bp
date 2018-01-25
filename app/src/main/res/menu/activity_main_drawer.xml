@@ -11,6 +11,9 @@
         android:icon="@drawable/ic_data_usage_black_24dp"
         android:title="Graf spotreby celkov"/>
     <item android:id="@+id/nav_config"
-        android:icon="@mipmap/ic_build_black_24dp"
-        android:title="Nastavenie"/>
+        android:icon="@drawable/ic_settings_applications_black_24dp"
+        android:title="Nastavenia Aplikácie"/>
+    <item android:id="@+id/nav_config_hw"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="Nastavenia Zásuvky"/>
 </menu>

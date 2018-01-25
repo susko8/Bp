@@ -31,6 +31,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.samuel.altzasuvkaapp.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="Inteligentná zásuvka"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>

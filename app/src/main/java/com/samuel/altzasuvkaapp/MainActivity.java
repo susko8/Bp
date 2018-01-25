@@ -36,6 +36,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.samuel.altzasuvkaapp.fragments.CakeFragment;
 import com.samuel.altzasuvkaapp.fragments.ConfigFragment;
+import com.samuel.altzasuvkaapp.fragments.HwConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
 
@@ -220,6 +221,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_cake:
                 fm.beginTransaction().replace(R.id.content_frame, new CakeFragment()).addToBackStack("cake").commit();
+                break;
+            case R.id.nav_config_hw:
+                fm.beginTransaction().replace(R.id.content_frame, new HwConfigFragment()).addToBackStack("hwset").commit();
                 break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout); //najdi drawer
