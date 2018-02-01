@@ -14,10 +14,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -41,6 +43,7 @@ import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity
@@ -122,7 +125,9 @@ public class MainActivity extends AppCompatActivity
         registerReceiver(BTReceiver, filter2);
         registerReceiver(BTReceiver, filter3);
         // Make sure we have access coarse location enabled, if not, prompt the user to enable it
-        if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+       /* if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            }
             final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
             builder.setTitle("This app needs location access");
             builder.setMessage("Please grant location access so this app can detect peripherals.");
@@ -134,7 +139,7 @@ public class MainActivity extends AppCompatActivity
                 }
             });
             builder.show();
-        }
+        }*/
     }
 
     @Override
@@ -197,6 +202,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -206,10 +212,10 @@ public class MainActivity extends AppCompatActivity
         data.putSerializable("Intervaly", intervaly);
         switch (id) { //logika menu, podla vybrateho nacitaj fragment
             case R.id.nav_home:
-                fm.beginTransaction().replace(R.id.content_frame, mainFragment).commit();
+                this.getSupportActionBar().setTitle("Inteligentná zásuvka");
+                fm.beginTransaction().replace(R.id.content_frame, mainFragment)/*.addToBackStack("main")*/.commit();
                 break;
             case R.id.nav_config:
-
                 ConfigFragment c = new ConfigFragment();
                 c.setArguments(data);
                 fm.beginTransaction().replace(R.id.content_frame, c).addToBackStack("main").commit();
@@ -261,10 +267,22 @@ public class MainActivity extends AppCompatActivity
                                      byte[] scanRecord) {
                     runOnUiThread(new Runnable() {
                         @Override
-                        public void run() {
-                            devices.add(new BTDevice(device));
-                            adapter.notifyDataSetChanged();
-                            DialogProgressBar.setVisibility(View.INVISIBLE);
+                        public void run()
+                        {
+                            boolean add=true;
+                            for(int i=0;i<devices.size();i++)
+                            {
+                                if(Objects.equals(device.getAddress(), devices.get(i).getAddress()))
+                                {
+                                    add=false;
+                                }
+                            }
+                            if(add)
+                            {
+                                devices.add(new BTDevice(device));
+                                adapter.notifyDataSetChanged();
+                                DialogProgressBar.setVisibility(View.INVISIBLE);
+                            }
                         }
                     });
                 }
@@ -304,6 +322,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.cancel();
+                    devices.clear();
                 }
             });
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -10,23 +10,18 @@
     android:orientation="vertical">
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/section2_label"
         >
         <TextView
             style="?android:attr/listSeparatorTextViewStyle"
-            android:layout_width="385dp"
-            android:layout_height="wrap_content"
-            android:text="Nastavenia Aplikácie"
-            android:textSize="18dp"
-            android:gravity="center" />
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000"
             android:text="Lacný prúd"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textSize="18dp"
+            android:layout_gravity="center"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -34,12 +29,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Od"
+                android:textColor="#000"
+                android:layout_alignLeft="@id/cheap_picker_from"
                 android:layout_marginStart="5dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Do"
-                android:layout_marginStart="210dp"/>
+                android:textColor="#000"
+                android:layout_alignLeft="@id/cheap_picker_to"/>
         <NumberPicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,16 +48,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/cheap_picker_to"
-            android:layout_marginStart="250dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="50dp"
+
             >
         </NumberPicker>
         </RelativeLayout>
         <TextView
+            style="?android:attr/listSeparatorTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000"
             android:text="Drahý prúd"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:textSize="18dp"
+            android:layout_gravity="center"/>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -67,12 +69,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Od"
-                android:layout_marginStart="5dp"/>
+                android:textColor="#000"
+                android:layout_marginStart="5dp"
+                android:layout_alignLeft="@id/exp_picker_from"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Do"
-                android:layout_marginStart="210dp"/>
+                android:textColor="#000"
+                android:layout_alignLeft="@id/exp_picker_to"/>
 
             <NumberPicker
                 android:layout_width="wrap_content"
@@ -84,7 +89,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/exp_picker_to"
-                android:layout_marginStart="250dp"
+               android:layout_marginEnd="50dp"
+                android:layout_alignParentRight="true"
                 >
             </NumberPicker>
         </RelativeLayout>

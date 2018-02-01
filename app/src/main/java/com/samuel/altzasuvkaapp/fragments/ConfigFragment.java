@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ public class ConfigFragment extends Fragment
         Bundle arguments = getArguments();
         super.onCreate(savedInstanceState);
         setRetainInstance(true);//uloz instanciu
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Nastavenia aplikácie");
         intervaly = (Intervals) arguments.getSerializable("Intervaly");
         RetrieveSettings();
     }
