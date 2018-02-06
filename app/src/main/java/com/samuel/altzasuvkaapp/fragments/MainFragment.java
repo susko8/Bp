@@ -4,6 +4,7 @@ package com.samuel.altzasuvkaapp.fragments;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
+import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -35,10 +36,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         setRetainInstance(true);//uloz instanciu
     }
 
-    public void setConnectedStatus()
+    public void setConnectedStatus(BluetoothDevice mBluetoothDevice)
     {
 
-            Id.setText("ID: XX:XX:XX:XX:XX ");
+            Id.setText("ID: "+mBluetoothDevice.getName()+", "+mBluetoothDevice.getAddress());
             String text = "Status: <font color='#43A047'>Connected</font>";
             status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
     }

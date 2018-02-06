@@ -7,6 +7,9 @@ import android.app.FragmentManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothGattCallback;
+import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothGattDescriptor;
 import android.bluetooth.BluetoothManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -53,11 +56,15 @@ public class MainActivity extends AppCompatActivity
     private boolean scanningState = true;
     private BluetoothAdapter mBluetoothAdapter; //= BluetoothAdapter.getDefaultAdapter(); //deklaracia Bt adaptera telefonu
     private BluetoothGatt mBluetoothGatt;
+    private BluetoothDevice mBluetoothDevice;
     private static final int REQUEST_ENABLE_BT = 1;
     private static final int RESULT_OK = 2;
     private static final int RESULT_CANCELED = 0; //musi byt 0
     private static final long SCAN_PERIOD = 10000;
     private static final int PERMISSION_REQUEST_COARSE_LOCATION = 1;
+    private static final int STATE_DISCONNECTED = 0;
+    private static final int STATE_CONNECTING = 1;
+    private static final int STATE_CONNECTED = 2;
     ArrayList<BTDevice> devices = new ArrayList<>();
     //premenne interfacu
     public Intervals intervaly = new Intervals();
@@ -77,7 +84,7 @@ public class MainActivity extends AppCompatActivity
             String action = intent.getAction();
 
             if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
-                mainFragment.setConnectedStatus();
+                mainFragment.setConnectedStatus(mBluetoothDevice);
                 Toast toast = Toast.makeText(context, "Device Connected, You can fully use App now!", Toast.LENGTH_SHORT);
                 connectedStatus = true;
 
@@ -154,7 +161,7 @@ public class MainActivity extends AppCompatActivity
         {
             mainFragment.setEnabledStatus();
             if (connectedStatus)
-                mainFragment.setConnectedStatus();
+                mainFragment.setConnectedStatus(mBluetoothDevice);
         } else {
             mainFragment.setDisabledStatus();
         }
@@ -241,6 +248,7 @@ public class MainActivity extends AppCompatActivity
     public void onBackPressed() {
         if (getFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentManager().popBackStack();
+            getFragmentManager().popBackStack();
         } else {
             super.onBackPressed(); //kvoli lepsiemu lifecycle, do stacku su davane posledne nacitane fragmenty
         }
@@ -325,15 +333,18 @@ public class MainActivity extends AppCompatActivity
                     devices.clear();
                 }
             });
+            final AlertDialog dialog = mBuilder.create();
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Context context = getApplicationContext();
                     Toast toast = Toast.makeText(context, "Connecting to " + devices.get(position).getName(), Toast.LENGTH_SHORT);
+                    mBluetoothDevice=devices.get(position).bluetoothDevice;
+                    BTConnect();
+                    dialog.cancel();
                     toast.show();
                 }
             });
-            AlertDialog dialog = mBuilder.create();
             dialog.show();
             scanLeDevice(true);
         } else
@@ -361,6 +372,61 @@ public class MainActivity extends AppCompatActivity
            scanningState = false;
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
         }
+    }
+    private void BTConnect()
+    {
+        mBluetoothDevice.connectGatt(this, false, new BluetoothGattCallback() {
+            @Override
+            public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState)
+            {
+                super.onConnectionStateChange(gatt, status, newState);
+            }
+
+            @Override
+            public void onServicesDiscovered(BluetoothGatt gatt, int status) {
+                super.onServicesDiscovered(gatt, status);
+            }
+
+            @Override
+            public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+                super.onCharacteristicRead(gatt, characteristic, status);
+            }
+
+            @Override
+            public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+                super.onCharacteristicWrite(gatt, characteristic, status);
+            }
+
+            @Override
+            public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
+                super.onCharacteristicChanged(gatt, characteristic);
+            }
+
+            @Override
+            public void onDescriptorRead(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
+                super.onDescriptorRead(gatt, descriptor, status);
+            }
+
+            @Override
+            public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
+                super.onDescriptorWrite(gatt, descriptor, status);
+            }
+
+            @Override
+            public void onReliableWriteCompleted(BluetoothGatt gatt, int status) {
+                super.onReliableWriteCompleted(gatt, status);
+            }
+
+            @Override
+            public void onReadRemoteRssi(BluetoothGatt gatt, int rssi, int status) {
+                super.onReadRemoteRssi(gatt, rssi, status);
+            }
+
+            @Override
+            public void onMtuChanged(BluetoothGatt gatt, int mtu, int status) {
+                super.onMtuChanged(gatt, mtu, status);
+            }
+        });
     }
 
 

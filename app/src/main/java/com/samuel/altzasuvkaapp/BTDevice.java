@@ -6,7 +6,7 @@ import android.bluetooth.BluetoothDevice;
 public class BTDevice
 {
 
-    private BluetoothDevice bluetoothDevice;
+    public BluetoothDevice bluetoothDevice;
     private int rssi;
     public BTDevice(BluetoothDevice btdevice)
     {
@@ -27,4 +27,5 @@ public class BTDevice
     {
         return rssi;
     }
+
 }
