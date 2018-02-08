@@ -27,6 +27,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private FloatingActionButton btTrigger;
     private TextView Id;
     private TextView status;
+    private TextView value1;
 
 
     @Override
@@ -38,8 +39,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     public void setConnectedStatus(BluetoothDevice mBluetoothDevice)
     {
-
-            Id.setText("ID: "+mBluetoothDevice.getName()+", "+mBluetoothDevice.getAddress());
+            String IdText="ID: "+mBluetoothDevice.getName().toString()+", "+mBluetoothDevice.getAddress().toString();
+            Id.setText(IdText);
             String text = "Status: <font color='#43A047'>Connected</font>";
             status.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
     }
@@ -69,6 +70,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         Toast toast = Toast.makeText(context, "Bluetooth Disabled, cannot access activity", Toast.LENGTH_SHORT);
         toast.show();
     }
+    public void setValue1(int temp)
+    {
+        value1.setText(temp);
+    }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -76,6 +81,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.main_fragment, container, false); //inflate layout fragmentom
         status = (TextView) view.findViewById(R.id.status); //najdi status
         Id = (TextView) view.findViewById(R.id.device_id); //najdi Id
+        value1=(TextView) view.findViewById(R.id.val1);
         connectButton = (Button) view.findViewById(R.id.connect_button); //najdi button
         connectButton.setOnClickListener(this); //daj mu listener
         status.setText("Status: Nepripojené "); //daj mu default text

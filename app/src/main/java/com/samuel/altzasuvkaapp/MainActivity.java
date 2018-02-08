@@ -10,7 +10,9 @@ import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
+import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
+import android.bluetooth.BluetoothProfile;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,14 +22,16 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -46,7 +50,9 @@ import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity
@@ -54,7 +60,7 @@ public class MainActivity extends AppCompatActivity
     //premenne BLuetoothu
     private boolean connectedStatus = false;
     private boolean scanningState = true;
-    private BluetoothAdapter mBluetoothAdapter; //= BluetoothAdapter.getDefaultAdapter(); //deklaracia Bt adaptera telefonu
+    private BluetoothAdapter mBluetoothAdapter; //deklaracia Bt adaptera telefonu
     private BluetoothGatt mBluetoothGatt;
     private BluetoothDevice mBluetoothDevice;
     private static final int REQUEST_ENABLE_BT = 1;
@@ -65,6 +71,13 @@ public class MainActivity extends AppCompatActivity
     private static final int STATE_DISCONNECTED = 0;
     private static final int STATE_CONNECTING = 1;
     private static final int STATE_CONNECTED = 2;
+    private static final int MSG_TEMPERATURE=0;
+    private static final int MSG_HUMIDITY=1;
+    //UUI pre pristup k servicom
+    protected static final UUID UPDATE_NOTIFICATION_DESCRIPTOR= UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
+    private static final UUID ENVIRONMENT_SERVICE=UUID.fromString("EF680200-9B35-4933-9B10-52FFA9740042");
+    private static final UUID TEMPERATURE=UUID.fromString("EF680201-9B35-4933-9B10-52FFA9740042");
+    private static final UUID HUMIDITY=UUID.fromString("EF680203-9B35-4933-9B10-52FFA9740042");
     ArrayList<BTDevice> devices = new ArrayList<>();
     //premenne interfacu
     public Intervals intervaly = new Intervals();
@@ -75,6 +88,8 @@ public class MainActivity extends AppCompatActivity
     ProgressBar DialogProgressBar;
     DeviceListAdapter adapter = new DeviceListAdapter();
     //multithreading premenne
+    Handler mHandler;
+    int mState=0;
 
 
 
@@ -83,7 +98,8 @@ public class MainActivity extends AppCompatActivity
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
 
-            if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
+            if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action))
+            {
                 mainFragment.setConnectedStatus(mBluetoothDevice);
                 Toast toast = Toast.makeText(context, "Device Connected, You can fully use App now!", Toast.LENGTH_SHORT);
                 connectedStatus = true;
@@ -108,7 +124,6 @@ public class MainActivity extends AppCompatActivity
         }
         //deklaracia adaptera
         final BluetoothManager manager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
-        ;
         mBluetoothAdapter = manager.getAdapter();
         setContentView(R.layout.activity_main); //layout do ktorehu su davane fragmenty a obsahuje navdrawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar); //setToolbaru s menom
@@ -125,14 +140,37 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fm = getFragmentManager(); //android si posledny fragment automaticky uklada do Bundlu
             fm.beginTransaction().replace(R.id.content_frame, mainFragment).commit();
         }
+        //inicializiacia receivera na BT akcie
         IntentFilter filter1 = new IntentFilter(BluetoothDevice.ACTION_ACL_CONNECTED);
         IntentFilter filter2 = new IntentFilter(BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED);
         IntentFilter filter3 = new IntentFilter(BluetoothDevice.ACTION_ACL_DISCONNECTED);
         registerReceiver(BTReceiver, filter1);
         registerReceiver(BTReceiver, filter2);
         registerReceiver(BTReceiver, filter3);
+        //Inicializacia multithreadingu
+        mHandler=new Handler(Looper.getMainLooper())
+        {
+            @Override
+            public void handleMessage(Message inputMessage)
+            {
+                int temp = (int) inputMessage.obj;
+                mainFragment.setValue1(temp);
+                /*BluetoothGattCharacteristic characteristic=null;
+            switch (inputMessage.what)
+            {
+                case MSG_TEMPERATURE:
+                    characteristic=(BluetoothGattCharacteristic) inputMessage.obj;
+                    Log.e("TVAL",characteristic.getValue().toString()+"!!!");
+                    break;
+                case MSG_HUMIDITY:
+                    characteristic=(BluetoothGattCharacteristic) inputMessage.obj;
+                    Log.e("HVAL",characteristic.getValue().toString()+"!!!");
+                    break;
+            }*/
+            }
+        };
         // Make sure we have access coarse location enabled, if not, prompt the user to enable it
-       /* if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+      /*  if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
         {
             }
             final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
@@ -145,12 +183,13 @@ public class MainActivity extends AppCompatActivity
                     requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
                 }
             });
-            builder.show();
-        }*/
+            builder.show();*/
+
     }
 
     @Override
-    public void onStart() {
+    public void onStart()
+    {
         super.onStart();
         if (mBluetoothAdapter == null) //ak nie je v telefone adapter
         {
@@ -295,7 +334,8 @@ public class MainActivity extends AppCompatActivity
                     });
                 }
             };
-    public void openBluetoothMenu() throws InterruptedException {
+    public void openBluetoothMenu() throws InterruptedException
+    {
         if (mBluetoothAdapter.isEnabled()) {
             AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
             View mView = getLayoutInflater().inflate(R.layout.dialog_devices, null);
@@ -330,6 +370,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.cancel();
+                    mBluetoothAdapter.stopLeScan(mLeScanCallback);
                     devices.clear();
                 }
             });
@@ -353,9 +394,7 @@ public class MainActivity extends AppCompatActivity
 
     private void scanLeDevice(final boolean enable) {
        if (enable)
-        {
-            Handler mHandler=new Handler();
-            mHandler.postDelayed(new Runnable() {
+        {            mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     scanningState = false;
@@ -373,6 +412,7 @@ public class MainActivity extends AppCompatActivity
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
         }
     }
+
     private void BTConnect()
     {
         mBluetoothDevice.connectGatt(this, false, new BluetoothGattCallback() {
@@ -380,26 +420,80 @@ public class MainActivity extends AppCompatActivity
             public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState)
             {
                 super.onConnectionStateChange(gatt, status, newState);
+                if(status==BluetoothGatt.GATT_SUCCESS && newState == BluetoothProfile.STATE_CONNECTED)
+                {
+                    Log.e("GATT", "Connected!!!");
+                    //ked som pripojeny musim pristupit k servicom
+                    gatt.discoverServices();
+                   /* try {
+                        Thread.sleep(5000);
+                        gatt.discoverServices();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }*/
+                    //  mHandler.sendMessage(Message.obtain())
+                }
+                else if (status != BluetoothGatt.GATT_SUCCESS)
+                {
+                    Log.e("GATT", "NOT Connected!!!");
+                    gatt.disconnect();
+                }
+            }
+
+            public boolean setCharacteristicNotification(BluetoothGatt gatt, UUID serviceUuid, UUID characteristicUuid,
+                                                         boolean enable)
+            {
+                Log.e("!!!E","BITCH CALLED!!");
+                BluetoothGattCharacteristic characteristic = gatt.getService(serviceUuid).getCharacteristic(characteristicUuid);
+                gatt.setCharacteristicNotification(characteristic, enable);
+                BluetoothGattDescriptor descriptor = characteristic.getDescriptor(UPDATE_NOTIFICATION_DESCRIPTOR);
+                descriptor.setValue(true ? BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE : new byte[]{0x00, 0x00});
+                return gatt.writeDescriptor(descriptor);
+
             }
 
             @Override
             public void onServicesDiscovered(BluetoothGatt gatt, int status) {
                 super.onServicesDiscovered(gatt, status);
+                if (status == BluetoothGatt.GATT_SUCCESS)
+                {
+                    if(setCharacteristicNotification(gatt,ENVIRONMENT_SERVICE,TEMPERATURE,true))
+                    Log.e("!!!E","CHECK OK!!");
+                }
             }
 
+
             @Override
-            public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+            public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status)
+            {
                 super.onCharacteristicRead(gatt, characteristic, status);
+                Log.e("!!!","READ CALLED!!!");
+                Log.e("!!!",characteristic.getValue().toString());
+               /* if(TEMPERATURE.equals(characteristic.getUuid()))
+                {
+                    mHandler.sendMessage(Message.obtain(null,MSG_TEMPERATURE,characteristic));
+                }
+                if(HUMIDITY.equals(characteristic.getUuid()))
+                {
+                    mHandler.sendMessage(Message.obtain(null,MSG_HUMIDITY,characteristic));
+                }*/
             }
 
             @Override
-            public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+            public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status)
+            {
                 super.onCharacteristicWrite(gatt, characteristic, status);
             }
 
             @Override
-            public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
+            public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic)
+            {
                 super.onCharacteristicChanged(gatt, characteristic);
+                Log.e("!!!","CHANGE CALLED!!!");
+                Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0)+" Celsius");
+               // mHandler.sendMessage(Message.obtain(null,MSG_TEMPERATURE,characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0)));
+
+
             }
 
             @Override
@@ -408,8 +502,10 @@ public class MainActivity extends AppCompatActivity
             }
 
             @Override
-            public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
+            public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status)
+            {
                 super.onDescriptorWrite(gatt, descriptor, status);
+                Log.e("W","WROTE DESC!!!");
             }
 
             @Override

@@ -2,6 +2,10 @@ package com.samuel.altzasuvkaapp;
 
 
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGatt;
+import android.bluetooth.BluetoothGattCallback;
+import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothGattDescriptor;
 
 public class BTDevice
 {
@@ -27,5 +31,6 @@ public class BTDevice
     {
         return rssi;
     }
+
 
 }

@@ -15,12 +15,14 @@
         android:id="@+id/header"
         >
     </include>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/header"
+        android:paddingTop="50dp"
+        android:id="@+id/menu"
         android:gravity="center_vertical"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:orientation="vertical">
@@ -58,8 +60,64 @@
                 android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
-    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu"
+        android:id="@+id/values"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Value 1"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:id="@+id/val1head"
+            />
+        <TextView
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Value 2"
+            android:layout_alignParentRight="true"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:id="@+id/val2head"
+            />
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:paddingLeft="20dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_below="@id/val1head"
+            android:id="@+id/val1"
+            />
+        <TextView
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:paddingRight="25dp"
+            android:layout_alignParentRight="true"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_below="@id/val1head"
+            android:id="@+id/val2"
+            />
 
+    </RelativeLayout>
+    </RelativeLayout>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="54dp"
@@ -67,13 +125,8 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="10dp"
         android:clickable="true"
-        app:fabSize="mini"
+        app:fabSize="normal"
         app:srcCompat="@android:drawable/stat_sys_data_bluetooth"
         />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp">
-    </LinearLayout>
 </FrameLayout>
 
