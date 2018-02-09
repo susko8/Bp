@@ -5,12 +5,17 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothGattCharacteristic;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +33,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private TextView Id;
     private TextView status;
     private TextView value1;
+    private TextView value2;
+    //multithreading
+
 
 
     @Override
@@ -72,7 +80,13 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     }
     public void setValue1(int temp)
     {
-        value1.setText(temp);
+        Log.e("!!!","SET VAL1 CALLED");
+        value1.setText(temp+"°C");
+    }
+    public void setValue2(int hum)
+    {
+        Log.e("!!!","SET VAL2 CALLED");
+        value2.setText(hum+"%");
     }
     @Nullable
     @Override
@@ -82,6 +96,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         status = (TextView) view.findViewById(R.id.status); //najdi status
         Id = (TextView) view.findViewById(R.id.device_id); //najdi Id
         value1=(TextView) view.findViewById(R.id.val1);
+        value2=(TextView) view.findViewById(R.id.val2);
         connectButton = (Button) view.findViewById(R.id.connect_button); //najdi button
         connectButton.setOnClickListener(this); //daj mu listener
         status.setText("Status: Nepripojené "); //daj mu default text

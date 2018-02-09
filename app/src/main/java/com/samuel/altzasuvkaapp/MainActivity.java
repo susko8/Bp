@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity
                 mainFragment.setConnectedStatus(mBluetoothDevice);
                 Toast toast = Toast.makeText(context, "Device Connected, You can fully use App now!", Toast.LENGTH_SHORT);
                 connectedStatus = true;
-
                 toast.show();
             } else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)) {
                 if (mBluetoothAdapter.isEnabled()) {
@@ -148,43 +147,7 @@ public class MainActivity extends AppCompatActivity
         registerReceiver(BTReceiver, filter2);
         registerReceiver(BTReceiver, filter3);
         //Inicializacia multithreadingu
-        mHandler=new Handler(Looper.getMainLooper())
-        {
-            @Override
-            public void handleMessage(Message inputMessage)
-            {
-                int temp = (int) inputMessage.obj;
-                mainFragment.setValue1(temp);
-                /*BluetoothGattCharacteristic characteristic=null;
-            switch (inputMessage.what)
-            {
-                case MSG_TEMPERATURE:
-                    characteristic=(BluetoothGattCharacteristic) inputMessage.obj;
-                    Log.e("TVAL",characteristic.getValue().toString()+"!!!");
-                    break;
-                case MSG_HUMIDITY:
-                    characteristic=(BluetoothGattCharacteristic) inputMessage.obj;
-                    Log.e("HVAL",characteristic.getValue().toString()+"!!!");
-                    break;
-            }*/
-            }
-        };
-        // Make sure we have access coarse location enabled, if not, prompt the user to enable it
-      /*  if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-        {
-            }
-            final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
-            builder.setTitle("This app needs location access");
-            builder.setMessage("Please grant location access so this app can detect peripherals.");
-            builder.setPositiveButton(android.R.string.ok, null);
-            builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                    requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
-                }
-            });
-            builder.show();*/
-
+       mHandler=new Handler(Looper.getMainLooper());
     }
 
     @Override
@@ -425,13 +388,6 @@ public class MainActivity extends AppCompatActivity
                     Log.e("GATT", "Connected!!!");
                     //ked som pripojeny musim pristupit k servicom
                     gatt.discoverServices();
-                   /* try {
-                        Thread.sleep(5000);
-                        gatt.discoverServices();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }*/
-                    //  mHandler.sendMessage(Message.obtain())
                 }
                 else if (status != BluetoothGatt.GATT_SUCCESS)
                 {
@@ -443,11 +399,14 @@ public class MainActivity extends AppCompatActivity
             public boolean setCharacteristicNotification(BluetoothGatt gatt, UUID serviceUuid, UUID characteristicUuid,
                                                          boolean enable)
             {
-                Log.e("!!!E","BITCH CALLED!!");
+                //inicializacia charakteristiky pomocou UID
                 BluetoothGattCharacteristic characteristic = gatt.getService(serviceUuid).getCharacteristic(characteristicUuid);
+                //upozorni ma ked sa charakteristika zmeni (user strana)
                 gatt.setCharacteristicNotification(characteristic, enable);
+                ////upozorni ma ked sa charakteristika zmeni (device strana)
                 BluetoothGattDescriptor descriptor = characteristic.getDescriptor(UPDATE_NOTIFICATION_DESCRIPTOR);
                 descriptor.setValue(true ? BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE : new byte[]{0x00, 0x00});
+                //ak true tak success
                 return gatt.writeDescriptor(descriptor);
 
             }
@@ -457,26 +416,31 @@ public class MainActivity extends AppCompatActivity
                 super.onServicesDiscovered(gatt, status);
                 if (status == BluetoothGatt.GATT_SUCCESS)
                 {
-                    if(setCharacteristicNotification(gatt,ENVIRONMENT_SERVICE,TEMPERATURE,true))
-                    Log.e("!!!E","CHECK OK!!");
+                    switch (mState)
+                    {
+                        case 0:
+
+                    if(setCharacteristicNotification(gatt,ENVIRONMENT_SERVICE,TEMPERATURE,true)) {
+                        Log.e("!!!E", "CHECK TEMP OK!!");
+                    }
+                    break;
+                        case 1:
+                    if(setCharacteristicNotification(gatt,ENVIRONMENT_SERVICE,HUMIDITY,true))
+                    {
+                        Log.e("!!!E","CHECK HUM OK!!");
+                        mState=0;
+                    }
+                    break;
+                    }
                 }
             }
-
-
             @Override
             public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status)
             {
                 super.onCharacteristicRead(gatt, characteristic, status);
                 Log.e("!!!","READ CALLED!!!");
-                Log.e("!!!",characteristic.getValue().toString());
-               /* if(TEMPERATURE.equals(characteristic.getUuid()))
-                {
-                    mHandler.sendMessage(Message.obtain(null,MSG_TEMPERATURE,characteristic));
-                }
-                if(HUMIDITY.equals(characteristic.getUuid()))
-                {
-                    mHandler.sendMessage(Message.obtain(null,MSG_HUMIDITY,characteristic));
-                }*/
+                mState++;
+                onServicesDiscovered(gatt,BluetoothGatt.GATT_SUCCESS);
             }
 
             @Override
@@ -486,14 +450,30 @@ public class MainActivity extends AppCompatActivity
             }
 
             @Override
-            public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic)
+            public void onCharacteristicChanged(BluetoothGatt gatt, final BluetoothGattCharacteristic characteristic)
             {
                 super.onCharacteristicChanged(gatt, characteristic);
                 Log.e("!!!","CHANGE CALLED!!!");
-                Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0)+" Celsius");
-               // mHandler.sendMessage(Message.obtain(null,MSG_TEMPERATURE,characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0)));
-
-
+                Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0).toString());
+                onCharacteristicRead(gatt,characteristic,BluetoothGatt.GATT_SUCCESS);
+                if(characteristic.getUuid().equals(TEMPERATURE))
+                {
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            mainFragment.setValue1(characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0));
+                        }
+                    });
+                }
+                else if(characteristic.getUuid().equals(HUMIDITY))
+                     {
+                        mHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                mainFragment.setValue2(characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0));
+                            }
+                        });
+                     }
             }
 
             @Override
@@ -561,3 +541,19 @@ public class MainActivity extends AppCompatActivity
         }
     }
 }
+
+// Make sure we have access coarse location enabled, if not, prompt the user to enable it
+      /*  if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            }
+            final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+            builder.setTitle("This app needs location access");
+            builder.setMessage("Please grant location access so this app can detect peripherals.");
+            builder.setPositiveButton(android.R.string.ok, null);
+            builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
+                }
+            });
+            builder.show();*/
