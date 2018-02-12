@@ -4,8 +4,10 @@ package com.samuel.altzasuvkaapp.fragments;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
+import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
+import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -34,6 +36,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private TextView status;
     private TextView value1;
     private TextView value2;
+    private BluetoothAdapter mBluetoothAdapter;
     //multithreading
 
 
@@ -100,8 +103,6 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         connectButton = (Button) view.findViewById(R.id.connect_button); //najdi button
         connectButton.setOnClickListener(this); //daj mu listener
         status.setText("Status: Nepripojené "); //daj mu default text
-        btTrigger = (FloatingActionButton) view.findViewById(R.id.floatingActionButton);
-        btTrigger.setOnClickListener(this);
         return view;
     }
 
@@ -110,16 +111,24 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     {
         Activity activity = getActivity();
         MainActivity myactivity = (MainActivity) activity;
-        if (v == btTrigger) {
-            myactivity.startBluetooth();
-        }
         if (v == connectButton)
         {
+            final BluetoothManager manager = (BluetoothManager) myactivity.getSystemService(Context.BLUETOOTH_SERVICE);
+            mBluetoothAdapter = manager.getAdapter();
+            if(!mBluetoothAdapter.isEnabled())
+            {
+                try {
+                    myactivity.startBluetooth();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
             try {
                 myactivity.openBluetoothMenu();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
         }
     }
-}
+    }

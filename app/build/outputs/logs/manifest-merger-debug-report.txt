@@ -42,10 +42,10 @@ uses-permission#android.permission.BLUETOOTH_ADMIN
 ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:6:5-74
 	android:name
 		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:6:22-71
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:7:5-81
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:7:22-76
 uses-feature#android.hardware.bluetooth_le
 ADDED from C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\src\main\AndroidManifest.xml:8:5-89
 	android:required

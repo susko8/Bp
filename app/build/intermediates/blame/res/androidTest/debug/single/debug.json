@@ -76,12 +76,12 @@
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
-        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable\\abc_list_selector_holo_light.xml"
-    },
-    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\color_abc_hint_foreground_material_light.xml.flat",
@@ -122,6 +122,10 @@
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_design_password_eye.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\72795ef47db85b6785d24d9e80cf712e\\res\\drawable\\design_password_eye.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_abc_list_menu_item_radio.xml.flat",
@@ -480,6 +484,10 @@
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_abc_btn_colored_material.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
@@ -576,6 +584,10 @@
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\color\\abc_search_url_text.xml"
     },
     {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-v23_abc_control_background_material.xml.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-v23\\abc_control_background_material.xml"
     },
@@ -648,12 +660,12 @@
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
-        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
-    },
-    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -668,12 +680,12 @@
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_abc_action_menu_layout.xml.flat",
-        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\layout\\abc_action_menu_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_abc_action_menu_layout.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_design_ic_visibility_off.png.flat",
@@ -792,6 +804,10 @@
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\72795ef47db85b6785d24d9e80cf712e\\res\\color\\design_tint_password_toggle.xml"
     },
     {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v16_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\layout-v16\\notification_template_custom_big.xml"
+    },
+    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
     },
@@ -864,6 +880,10 @@
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim_design_bottom_sheet_slide_out.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\72795ef47db85b6785d24d9e80cf712e\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
@@ -934,6 +954,10 @@
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-hdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_abc_edit_text_material.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_abc_vector_test.xml.flat",
@@ -1192,6 +1216,10 @@
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
@@ -1380,6 +1408,10 @@
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim_design_bottom_sheet_slide_in.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\72795ef47db85b6785d24d9e80cf712e\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_design_fab_background.xml.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\72795ef47db85b6785d24d9e80cf712e\\res\\drawable\\design_fab_background.xml"
     },
@@ -1494,6 +1526,10 @@
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_design_bottom_navigation_item_background.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\72795ef47db85b6785d24d9e80cf712e\\res\\drawable\\design_bottom_navigation_item_background.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -1638,6 +1674,10 @@
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_notification_action.xml.flat",
+        "source": "C:\\Users\\Samuel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\5613718129b4b0b47226a3ffa5902ee6\\res\\layout\\notification_action.xml"
     },
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",

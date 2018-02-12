@@ -1,4 +1,4 @@
-#Thu Feb 08 17:51:17 CET 2018
-base.0=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\63
+#Mon Feb 12 19:13:31 CET 2018
+base.0=C\:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\120
 path.0=classes.dex
 renamed.0=classes.dex

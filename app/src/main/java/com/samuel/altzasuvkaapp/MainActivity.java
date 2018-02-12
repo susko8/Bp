@@ -2,7 +2,6 @@ package com.samuel.altzasuvkaapp;
 
 
 import android.Manifest;
-import android.app.Dialog;
 import android.app.FragmentManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -10,7 +9,6 @@ import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
-import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
 import android.content.BroadcastReceiver;
@@ -19,13 +17,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -48,9 +46,7 @@ import com.samuel.altzasuvkaapp.fragments.ConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.HwConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -61,18 +57,11 @@ public class MainActivity extends AppCompatActivity
     private boolean connectedStatus = false;
     private boolean scanningState = true;
     private BluetoothAdapter mBluetoothAdapter; //deklaracia Bt adaptera telefonu
-    private BluetoothGatt mBluetoothGatt;
     private BluetoothDevice mBluetoothDevice;
     private static final int REQUEST_ENABLE_BT = 1;
     private static final int RESULT_OK = 2;
     private static final int RESULT_CANCELED = 0; //musi byt 0
     private static final long SCAN_PERIOD = 10000;
-    private static final int PERMISSION_REQUEST_COARSE_LOCATION = 1;
-    private static final int STATE_DISCONNECTED = 0;
-    private static final int STATE_CONNECTING = 1;
-    private static final int STATE_CONNECTED = 2;
-    private static final int MSG_TEMPERATURE=0;
-    private static final int MSG_HUMIDITY=1;
     //UUI pre pristup k servicom
     protected static final UUID UPDATE_NOTIFICATION_DESCRIPTOR= UUID.fromString("00002902-0000-1000-8000-00805f9b34fb");
     private static final UUID ENVIRONMENT_SERVICE=UUID.fromString("EF680200-9B35-4933-9B10-52FFA9740042");
@@ -86,12 +75,41 @@ public class MainActivity extends AppCompatActivity
     ListView listView;
     Button DialogRefresh;
     ProgressBar DialogProgressBar;
+    protected boolean mLocationPermissionGranted;
     DeviceListAdapter adapter = new DeviceListAdapter();
     //multithreading premenne
     Handler mHandler;
-    int mState=0;
+    int mState=0; //state machine pre čitanie charakteristik rad za radom
 
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        mLocationPermissionGranted = false;
+        switch (requestCode) {
+            case 1:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    mLocationPermissionGranted = true;
+                }
+                break;
+        }
+    }
+
+    private void initPermission(){
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
+            requestFineLocationPermission();
+        } else {
+            mLocationPermissionGranted = true;
+        }
+    }
+    private void requestFineLocationPermission()
+    {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+    }
 
     private final BroadcastReceiver BTReceiver = new BroadcastReceiver() {
         @Override
@@ -147,7 +165,15 @@ public class MainActivity extends AppCompatActivity
         registerReceiver(BTReceiver, filter2);
         registerReceiver(BTReceiver, filter3);
         //Inicializacia multithreadingu
-       mHandler=new Handler(Looper.getMainLooper());
+        mHandler=new Handler(Looper.getMainLooper());
+        try {
+            startBluetooth();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        initPermission();
+
+
     }
 
     @Override
@@ -168,44 +194,27 @@ public class MainActivity extends AppCompatActivity
             mainFragment.setDisabledStatus();
         }
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case PERMISSION_REQUEST_COARSE_LOCATION: {
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                } else {
-                    final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Functionality limited");
-                    builder.setMessage("Since location access has not been granted, this app will not be able to discover beacons when in the background.");
-                    builder.setPositiveButton(android.R.string.ok, null);
-                    builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-                        @Override
-                        public void onDismiss(DialogInterface dialog) {
-                        }
-
-                    });
-                    builder.show();
-                }
-                return;
-            }
-        }
-    }
     public void onActivityResult(int requestCode, int resultCode, Intent data)  //Override metoda aby bolo jasny aky vysledok z nej bol
     {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_ENABLE_BT) {
             // zbehol vobec request ?
-            if (resultCode == RESULT_OK) {
+            if (resultCode == RESULT_OK)
+            {
                 try {
                     TimeUnit.SECONDS.sleep(3); //po 3 sekundach napis zapnuty Bt, cisto esteticka zalezitost
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                mainFragment.setEnabledStatus();
+                //mainFragment.setEnabledStatus();
+                try {
+                    openBluetoothMenu();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-            if (resultCode == RESULT_CANCELED) {
+            if (resultCode == RESULT_CANCELED)
+            {
                 mainFragment.setDisabledStatus();
             }
         }
@@ -252,7 +261,9 @@ public class MainActivity extends AppCompatActivity
             getFragmentManager().popBackStack();
             getFragmentManager().popBackStack();
         } else {
-            super.onBackPressed(); //kvoli lepsiemu lifecycle, do stacku su davane posledne nacitane fragmenty
+            super.onBackPressed();
+            mBluetoothAdapter.disable();
+            finish();//kvoli lepsiemu lifecycle, do stacku su davane posledne nacitane fragmenty
         }
     }
 
@@ -262,7 +273,8 @@ public class MainActivity extends AppCompatActivity
         outState.putBoolean("connectedstatus", connectedStatus);
     }
 
-    public void startBluetooth() {
+    public void startBluetooth() throws InterruptedException
+    {
         if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
@@ -351,11 +363,12 @@ public class MainActivity extends AppCompatActivity
             });
             dialog.show();
             scanLeDevice(true);
-        } else
-            mainFragment.makeDisabledToast();
+        } /*else
+            mainFragment.makeDisabledToast();*/
     }
 
-    private void scanLeDevice(final boolean enable) {
+    private void scanLeDevice(final boolean enable)
+    {
        if (enable)
         {            mHandler.postDelayed(new Runnable() {
                 @Override
@@ -392,6 +405,7 @@ public class MainActivity extends AppCompatActivity
                 else if (status != BluetoothGatt.GATT_SUCCESS)
                 {
                     Log.e("GATT", "NOT Connected!!!");
+                    //neuspesny pokus odpoj
                     gatt.disconnect();
                 }
             }
@@ -428,7 +442,7 @@ public class MainActivity extends AppCompatActivity
                     if(setCharacteristicNotification(gatt,ENVIRONMENT_SERVICE,HUMIDITY,true))
                     {
                         Log.e("!!!E","CHECK HUM OK!!");
-                        mState=0;
+                        mState=0; //prepinac toto musi byt pri poslednej charakteristike
                     }
                     break;
                     }
@@ -477,7 +491,8 @@ public class MainActivity extends AppCompatActivity
             }
 
             @Override
-            public void onDescriptorRead(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status) {
+            public void onDescriptorRead(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status)
+            {
                 super.onDescriptorRead(gatt, descriptor, status);
             }
 
@@ -485,6 +500,7 @@ public class MainActivity extends AppCompatActivity
             public void onDescriptorWrite(BluetoothGatt gatt, BluetoothGattDescriptor descriptor, int status)
             {
                 super.onDescriptorWrite(gatt, descriptor, status);
+                //kontrola spravneho spristupnenia charakteristiky v logu
                 Log.e("W","WROTE DESC!!!");
             }
 
@@ -504,8 +520,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
     }
-
-
 
     public class DeviceListAdapter extends BaseAdapter
     {
@@ -540,20 +554,5 @@ public class MainActivity extends AppCompatActivity
 
         }
     }
+    
 }
-
-// Make sure we have access coarse location enabled, if not, prompt the user to enable it
-      /*  if (this.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-        {
-            }
-            final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
-            builder.setTitle("This app needs location access");
-            builder.setMessage("Please grant location access so this app can detect peripherals.");
-            builder.setPositiveButton(android.R.string.ok, null);
-            builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                    requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
-                }
-            });
-            builder.show();*/

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -115,18 +120,8 @@
             android:layout_below="@id/val1head"
             android:id="@+id/val2"
             />
-
     </RelativeLayout>
     </RelativeLayout>
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="54dp"
-        android:layout_height="52dp"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="10dp"
-        android:clickable="true"
-        app:fabSize="normal"
-        app:srcCompat="@android:drawable/stat_sys_data_bluetooth"
-        />
 </FrameLayout>
+</ScrollView>
 
