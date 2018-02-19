@@ -3,6 +3,9 @@
     <item android:id="@+id/nav_home"
         android:icon="@mipmap/ic_home_black_24dp"
         android:title="Domov"/>
+    <item android:id="@+id/nav_live"
+        android:icon="@drawable/ic_live_tv_black_24dp"
+        android:title="Live Metering"/>
     <item android:id="@+id/nav_graph"
         android:icon="@mipmap/ic_call_missed_outgoing_black_24dp"
         android:title="Graf spotreby"/>

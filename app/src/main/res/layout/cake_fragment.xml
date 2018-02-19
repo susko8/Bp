@@ -24,7 +24,7 @@
             android:layout_weight="1.7"
             />
     </LinearLayout>
-    <TextView
+   <!-- <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000"
@@ -33,7 +33,7 @@
         android:layout_gravity="center"
         android:layout_below="@+id/panel"
         android:id="@+id/cake_label"
-        />
+        />-->
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/chartcake"
         android:layout_width="match_parent"

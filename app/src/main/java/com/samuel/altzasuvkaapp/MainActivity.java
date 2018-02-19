@@ -45,6 +45,7 @@ import com.samuel.altzasuvkaapp.fragments.CakeFragment;
 import com.samuel.altzasuvkaapp.fragments.ConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.HwConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
+import com.samuel.altzasuvkaapp.fragments.LiveFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -53,7 +54,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    //premenne BLuetoothu
+    //premenne Bluetoothu
     private boolean connectedStatus = false;
     private boolean scanningState = true;
     private BluetoothAdapter mBluetoothAdapter; //deklaracia Bt adaptera telefonu
@@ -68,9 +69,38 @@ public class MainActivity extends AppCompatActivity
     private static final UUID TEMPERATURE=UUID.fromString("EF680201-9B35-4933-9B10-52FFA9740042");
     private static final UUID HUMIDITY=UUID.fromString("EF680203-9B35-4933-9B10-52FFA9740042");
     ArrayList<BTDevice> devices = new ArrayList<>();
+    //implementacia Bluetooth Callbacku
+    BluetoothAdapter.LeScanCallback mLeScanCallback =
+            new BluetoothAdapter.LeScanCallback() {
+                @Override
+                public void onLeScan(final BluetoothDevice device, int rssi,
+                                     byte[] scanRecord) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run()
+                        {
+                            boolean add=true;
+                            for(int i=0;i<devices.size();i++)
+                            {
+                                if(Objects.equals(device.getAddress(), devices.get(i).getAddress()))
+                                {
+                                    add=false;
+                                }
+                            }
+                            if(add)
+                            {
+                                devices.add(new BTDevice(device));
+                                adapter.notifyDataSetChanged();
+                                DialogProgressBar.setVisibility(View.INVISIBLE);
+                            }
+                        }
+                    });
+                }
+            };
     //premenne interfacu
     public Intervals intervaly = new Intervals();
     MainFragment mainFragment = new MainFragment();
+    LiveFragment liveFragment = new LiveFragment();
     //premenne dialogu
     ListView listView;
     Button DialogRefresh;
@@ -132,9 +162,13 @@ public class MainActivity extends AppCompatActivity
         }
     };
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //inicializacia BT na interface
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) //check ci ma telefon BT LE
         {
             mainFragment.setNoBtStatus();
@@ -142,6 +176,10 @@ public class MainActivity extends AppCompatActivity
         //deklaracia adaptera
         final BluetoothManager manager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         mBluetoothAdapter = manager.getAdapter();
+
+
+
+        //setlayout a navdrawer
         setContentView(R.layout.activity_main); //layout do ktorehu su davane fragmenty a obsahuje navdrawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar); //setToolbaru s menom
         setSupportActionBar(toolbar);
@@ -157,6 +195,9 @@ public class MainActivity extends AppCompatActivity
             FragmentManager fm = getFragmentManager(); //android si posledny fragment automaticky uklada do Bundlu
             fm.beginTransaction().replace(R.id.content_frame, mainFragment).commit();
         }
+
+
+
         //inicializiacia receivera na BT akcie
         IntentFilter filter1 = new IntentFilter(BluetoothDevice.ACTION_ACL_CONNECTED);
         IntentFilter filter2 = new IntentFilter(BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED);
@@ -164,6 +205,8 @@ public class MainActivity extends AppCompatActivity
         registerReceiver(BTReceiver, filter1);
         registerReceiver(BTReceiver, filter2);
         registerReceiver(BTReceiver, filter3);
+
+
         //Inicializacia multithreadingu
         mHandler=new Handler(Looper.getMainLooper());
         try {
@@ -171,6 +214,8 @@ public class MainActivity extends AppCompatActivity
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        //kontrola povoleni pristupu k lokalite
         initPermission();
 
 
@@ -233,6 +278,9 @@ public class MainActivity extends AppCompatActivity
                 this.getSupportActionBar().setTitle("Inteligentná zásuvka");
                 fm.beginTransaction().replace(R.id.content_frame, mainFragment)/*.addToBackStack("main")*/.commit();
                 break;
+            case R.id.nav_live:
+                fm.beginTransaction().replace(R.id.content_frame,liveFragment).addToBackStack("live").commit();
+                break;
             case R.id.nav_config:
                 ConfigFragment c = new ConfigFragment();
                 c.setArguments(data);
@@ -282,33 +330,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    BluetoothAdapter.LeScanCallback mLeScanCallback =
-            new BluetoothAdapter.LeScanCallback() {
-                @Override
-                public void onLeScan(final BluetoothDevice device, int rssi,
-                                     byte[] scanRecord) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run()
-                        {
-                            boolean add=true;
-                            for(int i=0;i<devices.size();i++)
-                            {
-                                if(Objects.equals(device.getAddress(), devices.get(i).getAddress()))
-                                {
-                                    add=false;
-                                }
-                            }
-                            if(add)
-                            {
-                                devices.add(new BTDevice(device));
-                                adapter.notifyDataSetChanged();
-                                DialogProgressBar.setVisibility(View.INVISIBLE);
-                            }
-                        }
-                    });
-                }
-            };
+
     public void openBluetoothMenu() throws InterruptedException
     {
         if (mBluetoothAdapter.isEnabled()) {
@@ -415,11 +437,14 @@ public class MainActivity extends AppCompatActivity
             {
                 //inicializacia charakteristiky pomocou UID
                 BluetoothGattCharacteristic characteristic = gatt.getService(serviceUuid).getCharacteristic(characteristicUuid);
+
                 //upozorni ma ked sa charakteristika zmeni (user strana)
                 gatt.setCharacteristicNotification(characteristic, enable);
+
                 ////upozorni ma ked sa charakteristika zmeni (device strana)
                 BluetoothGattDescriptor descriptor = characteristic.getDescriptor(UPDATE_NOTIFICATION_DESCRIPTOR);
                 descriptor.setValue(true ? BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE : new byte[]{0x00, 0x00});
+
                 //ak true tak success
                 return gatt.writeDescriptor(descriptor);
 
@@ -442,18 +467,29 @@ public class MainActivity extends AppCompatActivity
                     if(setCharacteristicNotification(gatt,ENVIRONMENT_SERVICE,HUMIDITY,true))
                     {
                         Log.e("!!!E","CHECK HUM OK!!");
-                        mState=0; //prepinac toto musi byt pri poslednej charakteristike
+                        //prepinac toto musi byt pri poslednej charakteristike aby fungoval state machine
+                        reset();
                     }
                     break;
                     }
                 }
+            }
+            public void reset()
+            {
+                mState=0;
+            }
+            public void switchToNextSensor()
+            {
+                mState++;
             }
             @Override
             public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status)
             {
                 super.onCharacteristicRead(gatt, characteristic, status);
                 Log.e("!!!","READ CALLED!!!");
-                mState++;
+
+                switchToNextSensor();
+
                 onServicesDiscovered(gatt,BluetoothGatt.GATT_SUCCESS);
             }
 
@@ -521,6 +557,8 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+
+    //adapter pre listview zobrazujuce najdene zariadenia
     public class DeviceListAdapter extends BaseAdapter
     {
         public DeviceListAdapter() {

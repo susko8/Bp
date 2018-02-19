@@ -50,7 +50,6 @@ public class LineChartFragment extends Fragment
         intervaly = (Intervals) arguments.getSerializable("Intervaly");
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Graf spotreby");
         RetrieveSettings();
-
     }
 
     @Nullable
@@ -73,7 +72,7 @@ public class LineChartFragment extends Fragment
     }
     public void setSpinner(View rootView)
     {
-        label = (TextView) rootView.findViewById(R.id.label); // najdi label
+        //label = (TextView) rootView.findViewById(R.id.label); // najdi label
         //spinner pre výber
         spinner = (Spinner) rootView.findViewById(R.id.spinner); //najdi spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getActivity(),
@@ -86,19 +85,19 @@ public class LineChartFragment extends Fragment
             {
                 if(position == 0)
                 {
-                    label.setText("Spotreba za posledných 24 hodín");
+                    //label.setText("Spotreba za posledných 24 hodín");
                 }
                 if(position == 1)
                 {
-                    label.setText("Spotreba za poslednú hodinu");
+                   // label.setText("Spotreba za poslednú hodinu");
                 }
                 if(position == 2)
                 {
-                label.setText("Spotreba za posledný týždeň");
+               // label.setText("Spotreba za posledný týždeň");
                 }
             if(position == 3)
                 {
-                label.setText("Spotreba za posledný mesiac");
+              //  label.setText("Spotreba za posledný mesiac");
                 }
             }
             @Override

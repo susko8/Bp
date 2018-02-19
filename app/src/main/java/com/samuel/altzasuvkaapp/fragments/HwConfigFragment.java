@@ -45,7 +45,7 @@ public class HwConfigFragment extends Fragment {
         seeker.setMax(65);
         seeker.setProgress(defaultProgress);
         seekerState = (TextView) rootView.findViewById(R.id.seeker_label);
-        seekerState.setText("Intenzita merania: " + defaultProgress + " min");
+        seekerState.setText("Interval merania: " + defaultProgress + " min");
         seeker.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -53,7 +53,7 @@ public class HwConfigFragment extends Fragment {
                 progress = progress * 5;
                 progress = progress + 5;
                 defaultProgress = progress;
-                seekerState.setText("Intenzita merania: " + progress + " min");
+                seekerState.setText("Interval merania: " + progress + " min");
             }
 
             @Override

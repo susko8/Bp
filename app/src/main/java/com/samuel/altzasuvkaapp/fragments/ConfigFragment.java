@@ -37,7 +37,7 @@ public class ConfigFragment extends Fragment
         Bundle arguments = getArguments();
         super.onCreate(savedInstanceState);
         setRetainInstance(true);//uloz instanciu
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Nastavenia aplikácie");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Nastavenia Aplikácie");
         intervaly = (Intervals) arguments.getSerializable("Intervaly");
         RetrieveSettings();
     }

@@ -33,7 +33,7 @@ public class CakeFragment extends Fragment
     {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);//uloz instanciu
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Graf spotreby domácnosti");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Graf spotreby v domácnosti");
     }
     @Nullable
     @Override
@@ -66,7 +66,7 @@ public class CakeFragment extends Fragment
     }
     public void setSpinner(View rootView)
     {
-        spinnertext= (TextView) rootView.findViewById(R.id.cake_label); // najdi label
+        //spinnertext= (TextView) rootView.findViewById(R.id.cake_label); // najdi label
         //spinner pre výber
         spinner = (Spinner) rootView.findViewById(R.id.cake_spinner); //najdi spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getActivity(),
@@ -79,19 +79,19 @@ public class CakeFragment extends Fragment
             {
                 if(position == 0)
                 {
-                    spinnertext.setText("Spotreba za posledných 24 hodín");
+                    //spinnertext.setText("Spotreba za posledných 24 hodín");
                 }
                 if(position == 1)
                 {
-                    spinnertext.setText("Spotreba za poslednú hodinu");
+                   // spinnertext.setText("Spotreba za poslednú hodinu");
                 }
                 if(position == 2)
                 {
-                    spinnertext.setText("Spotreba za posledný týždeň");
+                   // spinnertext.setText("Spotreba za posledný týždeň");
                 }
                 if(position == 3)
                 {
-                    spinnertext.setText("Spotreba za posledný mesiac");
+                   // spinnertext.setText("Spotreba za posledný mesiac");
                 }
             }
             @Override
