@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_call_missed_outgoing_black_24dp.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_call_missed_outgoing_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_build_black_24dp.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_build_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_home_black_24dp.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher_round.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    }
+]

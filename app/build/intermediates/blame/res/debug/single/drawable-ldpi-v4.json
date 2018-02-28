@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_settings_applications_black_24dp.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_settings_applications_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_live_tv_black_24dp.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_live_tv_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_data_usage_black_24dp.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_data_usage_black_24dp.png"
+    }
+]

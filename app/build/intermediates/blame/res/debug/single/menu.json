@@ -6,5 +6,9 @@
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
         "source": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
     }
 ]

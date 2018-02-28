@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity
     private static final UUID ENVIRONMENT_SERVICE=UUID.fromString("EF680200-9B35-4933-9B10-52FFA9740042");
     private static final UUID TEMPERATURE=UUID.fromString("EF680201-9B35-4933-9B10-52FFA9740042");
     private static final UUID HUMIDITY=UUID.fromString("EF680203-9B35-4933-9B10-52FFA9740042");
+    //premenne pre pristup k nameranym hodnotam
+    int value1;
+    int value2;
+    //arraylist devicov
     ArrayList<BTDevice> devices = new ArrayList<>();
     //implementacia Bluetooth Callbacku
     BluetoothAdapter.LeScanCallback mLeScanCallback =
@@ -111,6 +115,16 @@ public class MainActivity extends AppCompatActivity
     Handler mHandler;
     int mState=0; //state machine pre čitanie charakteristik rad za radom
 
+
+    public int getValue1()
+    {
+        return value1;
+    }
+
+    public int getValue2()
+    {
+        return value2;
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
@@ -508,6 +522,7 @@ public class MainActivity extends AppCompatActivity
                 onCharacteristicRead(gatt,characteristic,BluetoothGatt.GATT_SUCCESS);
                 if(characteristic.getUuid().equals(TEMPERATURE))
                 {
+                    value1=characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0);
                     mHandler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -517,6 +532,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 else if(characteristic.getUuid().equals(HUMIDITY))
                      {
+                         value2=characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0);
                         mHandler.post(new Runnable() {
                             @Override
                             public void run() {

@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_call_missed_outgoing_black_24dp.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_call_missed_outgoing_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher_round.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_build_black_24dp.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_build_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\app_logo_green.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-mdpi\\app_logo_green.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\app_logo.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-mdpi\\app_logo.png"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_home_black_24dp.png",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_home_black_24dp.png"
+    }
+]

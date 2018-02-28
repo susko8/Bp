@@ -6,5 +6,13 @@
     {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\8b346f7dc31effd79c7d7db34ce32705\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\8b346f7dc31effd79c7d7db34ce32705\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
     }
 ]

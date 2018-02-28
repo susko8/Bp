@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\8b346f7dc31effd79c7d7db34ce32705\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+    },
+    {
         "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
         "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     }

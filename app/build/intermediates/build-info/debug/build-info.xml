@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="armeabi-v7a,armeabi"
-    api-level="25"
-    build-mode="COLD"
-    density="xxhdpi"
+    abi="x86,armeabi-v7a,armeabi"
+    api-level="21"
+    build-mode="FULL"
+    density="hdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1519064254835"
+    timestamp="1519812648713"
     token="-7327944600211138781"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
@@ -23,24 +23,91 @@
         name="verifier"
         duration="0" />
 
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\outputs\apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
+
     <build
         build-mode="FULL"
-        timestamp="1519057710631"
+        timestamp="1519812648713"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\outputs\apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-        <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -49,72 +116,56 @@
             location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1519063185145"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1519063469981"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1519063892112"
-        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\outputs\apk\debug\app-debug.apk"
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Public\AndroidStudioProjects\AltZasuvkaApp\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1519063933473"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Samuel\AndroidStudioProjects\AltZasuvkaApp\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1519064254835"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
