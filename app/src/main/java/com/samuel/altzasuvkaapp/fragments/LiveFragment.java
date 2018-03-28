@@ -1,7 +1,9 @@
 package com.samuel.altzasuvkaapp.fragments;
 
 import android.app.Fragment;
+import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCharacteristic;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,6 +47,7 @@ public class LiveFragment extends Fragment {
     int spinposition; //poz. spinnera
     LineChart chart;
     private Thread thread;
+    private boolean doRun =true;
 
     @Nullable
     @Override
@@ -114,7 +117,6 @@ public class LiveFragment extends Fragment {
 
     private void ListenToData()
     {
-
         if (thread != null)
             thread.interrupt();
 
@@ -129,15 +131,23 @@ public class LiveFragment extends Fragment {
         thread = new Thread(new Runnable() {
 
             @Override
-            public void run() {
-                for (int i = 0; i < 1000; i++) {
-
+            public void run()
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    final boolean status= ((MainActivity)getActivity()).getisConnectedStatus();
+                    if(!doRun)
+                        break;
+                    if(!status)
+                    {
+                        doRun=false;
+                        closeFragment();
+                    }
                     getActivity().runOnUiThread(runnable);
-
                     try {
                         Thread.sleep(3000);
                     } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
+
                         e.printStackTrace();
                     }
                 }
@@ -145,6 +155,14 @@ public class LiveFragment extends Fragment {
         });
 
         thread.start();
+    }
+
+    private void closeFragment()
+    {
+        getActivity().getFragmentManager().beginTransaction().remove(this).commit();
+        Context context = ((MainActivity)getActivity());
+        Toast toast = Toast.makeText(context, "Device disconnected, Live Metering Stopped", Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     private void addEntry() {
@@ -194,29 +212,28 @@ public class LiveFragment extends Fragment {
         return set;
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
 
-        if (thread != null) {
-            thread.interrupt();
-        }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        doRun=false;
+//        if (thread != null) {
+//            thread.interrupt();
+//        }
+
     }
     @Override
-    public void onStop() {
-        super.onPause();
-
-        if (thread != null) {
-            thread.interrupt();
-        }
+    public void onStop()
+    {
+        super.onStop();
     }
     @Override
-    public void onDestroy() {
-        super.onPause();
-
-        if (thread != null) {
-            thread.interrupt();
-        }
+    public void onDestroy()
+    {
+        Log.e("!!!","DESTROY CALLED!!!");
+        super.onDestroy();
     }
 }
 

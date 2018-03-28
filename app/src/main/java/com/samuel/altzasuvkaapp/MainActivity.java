@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity
     private static final UUID TEMPERATURE=UUID.fromString("EF680201-9B35-4933-9B10-52FFA9740042");
     private static final UUID HUMIDITY=UUID.fromString("EF680203-9B35-4933-9B10-52FFA9740042");
     //premenne pre pristup k nameranym hodnotam
-    int value1;
-    int value2;
+    public int value1;
+    public int value2;
     //arraylist devicov
     ArrayList<BTDevice> devices = new ArrayList<>();
     //implementacia Bluetooth Callbacku
@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity
     //premenne interfacu
     public Intervals intervaly = new Intervals();
     MainFragment mainFragment = new MainFragment();
-    LiveFragment liveFragment = new LiveFragment();
     //premenne dialogu
     ListView listView;
     Button DialogRefresh;
@@ -116,6 +115,21 @@ public class MainActivity extends AppCompatActivity
     int mState=0; //state machine pre čitanie charakteristik rad za radom
 
 
+    public MainFragment getMainFragment() {
+        return mainFragment;
+    }
+
+    public void setMainFragment(MainFragment mainFragment) {
+        this.mainFragment = mainFragment;
+    }
+    public BluetoothDevice getmBluetoothDevice() {
+        return mBluetoothDevice;
+    }
+
+    public void setmBluetoothDevice(BluetoothDevice mBluetoothDevice) {
+        this.mBluetoothDevice = mBluetoothDevice;
+    }
+
     public int getValue1()
     {
         return value1;
@@ -124,6 +138,14 @@ public class MainActivity extends AppCompatActivity
     public int getValue2()
     {
         return value2;
+    }
+
+    public boolean getisConnectedStatus() {
+        return connectedStatus;
+    }
+
+    public void setisConnectedStatus(boolean connectedStatus) {
+        this.connectedStatus = connectedStatus;
     }
 
     @Override
@@ -166,12 +188,22 @@ public class MainActivity extends AppCompatActivity
                 Toast toast = Toast.makeText(context, "Device Connected, You can fully use App now!", Toast.LENGTH_SHORT);
                 connectedStatus = true;
                 toast.show();
-            } else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)) {
-                if (mBluetoothAdapter.isEnabled()) {
+            }
+            else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action))
+            {
+                 Log.e("GATT", "DisConnected!!!");
+                connectedStatus = false;
+                if (mBluetoothAdapter.isEnabled())
+                {
                     mainFragment.setEnabledStatus();
-                    connectedStatus = false;
+
                 } else
                     mainFragment.setDisabledStatus();
+            }
+            else if(BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED.equals(action))
+            {
+                Log.e("GATT", "DisConnected requested!!!");
+                connectedStatus = false;
             }
         }
     };
@@ -279,6 +311,12 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    public void notAllowedAlert()
+    {
+        Context context = MainActivity.this;
+        Toast toast = Toast.makeText(context, "Not Allowed ! Device NOT Connected !", Toast.LENGTH_SHORT);
+        toast.show();
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -293,23 +331,40 @@ public class MainActivity extends AppCompatActivity
                 fm.beginTransaction().replace(R.id.content_frame, mainFragment)/*.addToBackStack("main")*/.commit();
                 break;
             case R.id.nav_live:
-                fm.beginTransaction().replace(R.id.content_frame,liveFragment).addToBackStack("live").commit();
+                if(connectedStatus)
+                fm.beginTransaction().replace(R.id.content_frame,new LiveFragment()).addToBackStack("live").commit();
+                else
+                   notAllowedAlert();
                 break;
             case R.id.nav_config:
-                ConfigFragment c = new ConfigFragment();
-                c.setArguments(data);
-                fm.beginTransaction().replace(R.id.content_frame, c).addToBackStack("main").commit();
+                if(connectedStatus) {
+                    ConfigFragment c = new ConfigFragment();
+                    c.setArguments(data);
+                    fm.beginTransaction().replace(R.id.content_frame, c).addToBackStack("main").commit();
+                                    }
+                                    else
+                    notAllowedAlert();
                 break;
             case R.id.nav_graph:
-                LineChartFragment l = new LineChartFragment();
-                l.setArguments(data);
-                fm.beginTransaction().replace(R.id.content_frame, l).addToBackStack("line").commit();
+                if(connectedStatus) {
+                    LineChartFragment l = new LineChartFragment();
+                    l.setArguments(data);
+                    fm.beginTransaction().replace(R.id.content_frame, l).addToBackStack("line").commit();
+                }
+                else
+                    notAllowedAlert();
                 break;
             case R.id.nav_cake:
+                if(connectedStatus)
                 fm.beginTransaction().replace(R.id.content_frame, new CakeFragment()).addToBackStack("cake").commit();
+                else
+                    notAllowedAlert();
                 break;
             case R.id.nav_config_hw:
+                if(connectedStatus)
                 fm.beginTransaction().replace(R.id.content_frame, new HwConfigFragment()).addToBackStack("hwset").commit();
+                else
+                    notAllowedAlert();
                 break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout); //najdi drawer
@@ -434,15 +489,16 @@ public class MainActivity extends AppCompatActivity
                 super.onConnectionStateChange(gatt, status, newState);
                 if(status==BluetoothGatt.GATT_SUCCESS && newState == BluetoothProfile.STATE_CONNECTED)
                 {
-                    Log.e("GATT", "Connected!!!");
+                   // Log.e("GATT", "Connected!!!");
                     //ked som pripojeny musim pristupit k servicom
                     gatt.discoverServices();
                 }
                 else if (status != BluetoothGatt.GATT_SUCCESS)
                 {
-                    Log.e("GATT", "NOT Connected!!!");
+                   // Log.e("GATT", "NOT Connected!!!");
                     //neuspesny pokus odpoj
                     gatt.disconnect();
+                    connectedStatus=false;
                 }
             }
 
@@ -474,13 +530,13 @@ public class MainActivity extends AppCompatActivity
                         case 0:
 
                     if(setCharacteristicNotification(gatt,ENVIRONMENT_SERVICE,TEMPERATURE,true)) {
-                        Log.e("!!!E", "CHECK TEMP OK!!");
+                      //  Log.e("!!!E", "CHECK TEMP OK!!");
                     }
                     break;
                         case 1:
                     if(setCharacteristicNotification(gatt,ENVIRONMENT_SERVICE,HUMIDITY,true))
                     {
-                        Log.e("!!!E","CHECK HUM OK!!");
+                      //  Log.e("!!!E","CHECK HUM OK!!");
                         //prepinac toto musi byt pri poslednej charakteristike aby fungoval state machine
                         reset();
                     }
@@ -500,7 +556,7 @@ public class MainActivity extends AppCompatActivity
             public void onCharacteristicRead(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status)
             {
                 super.onCharacteristicRead(gatt, characteristic, status);
-                Log.e("!!!","READ CALLED!!!");
+              //  Log.e("!!!","READ CALLED!!!");
 
                 switchToNextSensor();
 
@@ -517,8 +573,8 @@ public class MainActivity extends AppCompatActivity
             public void onCharacteristicChanged(BluetoothGatt gatt, final BluetoothGattCharacteristic characteristic)
             {
                 super.onCharacteristicChanged(gatt, characteristic);
-                Log.e("!!!","CHANGE CALLED!!!");
-                Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0).toString());
+               // Log.e("!!!","CHANGE CALLED!!!");
+             //   Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0).toString());
                 onCharacteristicRead(gatt,characteristic,BluetoothGatt.GATT_SUCCESS);
                 if(characteristic.getUuid().equals(TEMPERATURE))
                 {
@@ -553,7 +609,7 @@ public class MainActivity extends AppCompatActivity
             {
                 super.onDescriptorWrite(gatt, descriptor, status);
                 //kontrola spravneho spristupnenia charakteristiky v logu
-                Log.e("W","WROTE DESC!!!");
+               // Log.e("W","WROTE DESC!!!");
             }
 
             @Override

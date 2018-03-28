@@ -48,8 +48,21 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         setRetainInstance(true);//uloz instanciu
     }
 
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+        boolean status =((MainActivity)getActivity()).getisConnectedStatus();
+        if(status)
+        {
+            this.setConnectedStatus(((MainActivity) getActivity()).getmBluetoothDevice());
+           // Log.e("!!!","SET CALLED FROM FRAGMENT START!!!");
+        }
+    }
+
     public void setConnectedStatus(BluetoothDevice mBluetoothDevice)
     {
+            Log.e("!!!","SETTING CALLED!!!");
             String IdText="ID: "+mBluetoothDevice.getName().toString()+", "+mBluetoothDevice.getAddress().toString();
             Id.setText(IdText);
             String text = "Status: <font color='#43A047'>Connected</font>";
@@ -83,18 +96,19 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     }
     public void setValue1(int temp)
     {
-        Log.e("!!!","SET VAL1 CALLED");
+      //  Log.e("!!!","SET VAL1 CALLED");
         value1.setText(temp+"°C");
     }
     public void setValue2(int hum)
     {
-        Log.e("!!!","SET VAL2 CALLED");
+      //  Log.e("!!!","SET VAL2 CALLED");
         value2.setText(hum+"%");
     }
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        //inicializacia
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
+    {
+              //inicializacia
         View view = inflater.inflate(R.layout.main_fragment, container, false); //inflate layout fragmentom
         status = (TextView) view.findViewById(R.id.status); //najdi status
         Id = (TextView) view.findViewById(R.id.device_id); //najdi Id
