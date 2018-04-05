@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
@@ -26,6 +27,8 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartGestureListener;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.google.gson.Gson;
 import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
@@ -35,7 +38,7 @@ import java.util.List;
 import java.util.Random;
 
 
-public class LineChartFragment extends Fragment
+public class LineChartFragment extends Fragment implements OnChartValueSelectedListener
 {
     TextView label; //nazov grafu podla spinnera
     Spinner spinner; //spinner
@@ -66,6 +69,7 @@ public class LineChartFragment extends Fragment
         addLimitLines(chart);
         styleChart(chart);
         chart.setHardwareAccelerationEnabled(true);
+        chart.setOnChartValueSelectedListener(this);
         chart.animateX(500, Easing.EasingOption.EaseInOutSine);
         chart.invalidate();
         return rootView;
@@ -205,6 +209,19 @@ public class LineChartFragment extends Fragment
             String json = sharedPref.getString("Intervaly", "");
             intervaly = gson.fromJson(json, Intervals.class);
         }
+    }
+
+    @Override
+    public void onValueSelected(Entry e, Highlight h)
+    {
+        Context context = this.getActivity().getApplicationContext();
+        Toast toast = Toast.makeText(context, "Spotreba o "+(int)e.getX()+"h : "+e.getY()+" W Jednotková cena: "+e.getY()*0.13+" €", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    @Override
+    public void onNothingSelected() {
+
     }
 }
 

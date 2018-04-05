@@ -70,6 +70,33 @@ public class LiveFragment extends Fragment {
         chart.setTouchEnabled(true);
         chart.setDragEnabled(true);
         chart.setScaleEnabled(true);
+
+
+
+
+
+
+        XAxis xl =chart.getXAxis();
+        xl.setTextColor(Color.WHITE);
+        xl.setDrawGridLines(false);
+        xl.setAvoidFirstLastClipping(true);
+        xl.setEnabled(true);
+
+        YAxis leftAxis = chart.getAxisLeft();
+        leftAxis.setTextColor(Color.BLACK);
+        leftAxis.setAxisMaximum(35f);
+        leftAxis.setAxisMinimum(0f);
+        leftAxis.setDrawGridLines(true);
+
+        YAxis rightAxis = chart.getAxisRight();
+        rightAxis.setEnabled(false);
+
+
+
+
+
+
+
         chart.setData(new LineData());
         ListenToData();
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Live Metering");
@@ -133,9 +160,9 @@ public class LiveFragment extends Fragment {
             @Override
             public void run()
             {
+                final boolean status= ((MainActivity)getActivity()).getisConnectedStatus();
                 for (int i = 0; i < 100; i++)
                 {
-                    final boolean status= ((MainActivity)getActivity()).getisConnectedStatus();
                     if(!doRun)
                         break;
                     if(!status)
@@ -184,7 +211,7 @@ public class LiveFragment extends Fragment {
             chart.notifyDataSetChanged();
 
             // limit the number of visible entries
-            chart.setVisibleXRangeMaximum(120);
+            chart.setVisibleXRangeMaximum(12);
             // mChart.setVisibleYRange(30, AxisDependency.LEFT);
 
             // move to the latest entry
@@ -200,9 +227,9 @@ public class LiveFragment extends Fragment {
         LineDataSet set = new LineDataSet(null, "DataSet 1");
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
         set.setColor(ColorTemplate.getHoloBlue());
-        set.setCircleColor(Color.WHITE);
-        set.setLineWidth(2f);
-        set.setCircleRadius(4f);
+        set.setCircleColor(Color.BLUE);
+        set.setLineWidth(5f);
+        set.setCircleRadius(6f);
         set.setFillAlpha(65);
         set.setFillColor(ColorTemplate.getHoloBlue());
         set.setHighLightColor(Color.rgb(244, 117, 117));
