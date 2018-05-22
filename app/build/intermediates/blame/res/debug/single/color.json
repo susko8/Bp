@@ -1,178 +1,90 @@
 [
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\switch_thumb_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_primary_text_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_tint_default.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_secondary_text_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\switch_thumb_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\8b346f7dc31effd79c7d7db34ce32705\\res\\color\\design_error.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\color\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_search_url_text.xml"
-    },
-    {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\switch_thumb_material_dark.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_tint_btn_checkable.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_search_url_text.xml"
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_tint_seek_thumb.xml"
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\f0d518ecdf63873f4fa9d177e478005e43c4a589\\output\\res\\color\\design_error.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_hint_foreground_material_light.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_hint_foreground_material_dark.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_secondary_text_material_light.xml"
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_tint_edittext.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\switch_thumb_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_tint_switch_thumb.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\switch_thumb_material_light.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\8b346f7dc31effd79c7d7db34ce32705\\res\\color\\design_tint_password_toggle.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\795b3818e4d9bdbf35478178e5a65bd7\\res\\color\\design_tint_password_toggle.xml"
     },
     {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\color\\abc_btn_colored_text_material.xml"
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\795b3818e4d9bdbf35478178e5a65bd7\\res\\color\\design_error.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_secondary_text_material_dark.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_search_url_text.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_btn_colored_text_material.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_btn_colored_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\color\\abc_primary_text_material_light.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\color\\abc_primary_text_material_light.xml"
     }
 ]

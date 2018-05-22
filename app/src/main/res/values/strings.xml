@@ -8,7 +8,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string-array name="spinnerarray">
         <item>24 Hodín</item>
-        <item>Posledná hodina</item>
         <item>Týždeň</item>
         <item>Mesiac</item>
     </string-array>

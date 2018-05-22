@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateFormat;
+import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +35,10 @@ import com.google.gson.Gson;
 import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -44,6 +49,10 @@ public class LineChartFragment extends Fragment implements OnChartValueSelectedL
     Spinner spinner; //spinner
     int spinposition; //poz. spinnera
     Intervals intervaly;
+    List<Entry> entries;
+    LineChart chart;
+    String drawingChart;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -63,10 +72,10 @@ public class LineChartFragment extends Fragment implements OnChartValueSelectedL
             spinposition = savedInstanceState.getInt("spinner"); //ulozena pozicia spinner, sup ju tam
         View rootView = inflater.inflate(R.layout.line_fragment, container, false); //inflate layout
         setSpinner(rootView); //nastav spinner
-        LineChart chart = (LineChart) rootView.findViewById(R.id.chart);
-        List<Entry> entries = new ArrayList<Entry>();
-        addDataToChart(entries,chart);
-        addLimitLines(chart);
+        chart = (LineChart) rootView.findViewById(R.id.chart);
+        entries=new ArrayList<>();
+        drawingChart="day";
+        addDataToChart(entries,drawingChart);
         styleChart(chart);
         chart.setHardwareAccelerationEnabled(true);
         chart.setOnChartValueSelectedListener(this);
@@ -89,19 +98,18 @@ public class LineChartFragment extends Fragment implements OnChartValueSelectedL
             {
                 if(position == 0)
                 {
-                    //label.setText("Spotreba za posledných 24 hodín");
+                    drawingChart = "day";
+                   addDataToChart(entries,drawingChart);
                 }
                 if(position == 1)
                 {
-                   // label.setText("Spotreba za poslednú hodinu");
+                    drawingChart = "week";
+                    addDataToChart(entries,drawingChart);
                 }
                 if(position == 2)
                 {
-               // label.setText("Spotreba za posledný týždeň");
-                }
-            if(position == 3)
-                {
-              //  label.setText("Spotreba za posledný mesiac");
+                    drawingChart = "month";
+                    addDataToChart(entries,drawingChart);
                 }
             }
             @Override
@@ -132,15 +140,89 @@ public class LineChartFragment extends Fragment implements OnChartValueSelectedL
         chart.setDescription(desc);
         chart.setKeepPositionOnRotation(true);
     }
-    public void addDataToChart(List<Entry> entries,LineChart chart)
+    public void addDataToChart(List<Entry> entries,String type)
     {
-        //todo rozumny objekt pre setgrafu a dat
-        //todo week and month podla list view
         Random randomGenerator = new Random();
         //tu cyklus naplniť, pozor treba naplnat asi v poradi
-        for (int i = 0; i <= 24; i += 2) {
-            int randomInt = randomGenerator.nextInt(100);
-            entries.add(new Entry(i, randomInt));
+        entries.clear();
+        if(type.equals("day"))
+        {
+            //demo dataset
+            //nie v cykle random ciel bol reprezentovat data co najrealnejsie
+            entries.add(new Entry(0, 80));
+            entries.add(new Entry(1, 83.5f));
+            entries.add(new Entry(2, 80));
+            entries.add(new Entry(3, 81.5f));
+            entries.add(new Entry(4, 95f));
+            entries.add(new Entry(5, 90.1f));
+            entries.add(new Entry(6, 150f));
+            entries.add(new Entry(7, 400f));
+            entries.add(new Entry(8, 300f));
+            entries.add(new Entry(9, 250f));
+            entries.add(new Entry(10, 150f));
+            entries.add(new Entry(11, 150f));
+            entries.add(new Entry(12, 130f));
+            entries.add(new Entry(13, 120f));
+            entries.add(new Entry(14, 200f));
+            entries.add(new Entry(15, 250f));
+            entries.add(new Entry(16, 400f));
+            entries.add(new Entry(17, 350f));
+            entries.add(new Entry(18, 450f));
+            entries.add(new Entry(19, 500f));
+            entries.add(new Entry(20, 550f));
+            entries.add(new Entry(21, 400f));
+            entries.add(new Entry(22, 200f));
+            entries.add(new Entry(23, 125.5f));
+            addLimitLines();
+        }
+        if(type.equals("week"))
+        {
+            //demo dataset
+            //nie v cykle random ciel bol reprezentovat data co najrealnejsie
+            entries.add(new Entry(1, 3.8f));
+            entries.add(new Entry(2, 6.2f));
+            entries.add(new Entry(3, 6.5f));
+            entries.add(new Entry(4, 5.0f));
+            entries.add(new Entry(5, 4.8f));
+            entries.add(new Entry(6, 4.8f));
+            entries.add(new Entry(7, 5.8f));
+            removeLimitLines();
+        }
+        if(type.equals("month"))
+        {
+            //demo dataset
+            //nie v cykle random ciel bol reprezentovat data co najrealnejsie
+            entries.add(new Entry(1, 3.8f));
+            entries.add(new Entry(2, 6.2f));
+            entries.add(new Entry(3, 6.5f));
+            entries.add(new Entry(4, 5.0f));
+            entries.add(new Entry(5, 4.8f));
+            entries.add(new Entry(6, 4.9f));
+            entries.add(new Entry(7, 5.5f));
+            entries.add(new Entry(8, 4.3f));
+            entries.add(new Entry(9, 3.5f));
+            entries.add(new Entry(10, 6.2f));
+            entries.add(new Entry(11, 5.1f));
+            entries.add(new Entry(12, 5.0f));
+            entries.add(new Entry(13, 4.8f));
+            entries.add(new Entry(14, 4.13f));
+            entries.add(new Entry(15, 5.0f));
+            entries.add(new Entry(16, 4.0f));
+            entries.add(new Entry(17, 3.8f));
+            entries.add(new Entry(18, 6.2f));
+            entries.add(new Entry(19, 4.9f));
+            entries.add(new Entry(20, 2.21f));
+            entries.add(new Entry(21, 4.43f));
+            entries.add(new Entry(22, 4.6f));
+            entries.add(new Entry(23, 5.4f));
+            entries.add(new Entry(24, 4.8f));
+            entries.add(new Entry(25, 4.8f));
+            entries.add(new Entry(26, 5.0f));
+            entries.add(new Entry(27, 4.0f));
+            entries.add(new Entry(28, 4.2f));
+            entries.add(new Entry(29, 6.2f));
+            entries.add(new Entry(30, 5.75f));
+            removeLimitLines();
         }
         LineDataSet dataSet = new LineDataSet(entries, "Test Dataset");
         dataSet.setColor(Color.BLACK);
@@ -154,8 +236,14 @@ public class LineChartFragment extends Fragment implements OnChartValueSelectedL
         dataSet.setDrawCircleHole(false);
         LineData lineData = new LineData(dataSet);
         chart.setData(lineData);
+        chart.invalidate();
     }
-    public void addLimitLines(LineChart chart)
+    public void removeLimitLines()
+    {
+        XAxis xAxis = chart.getXAxis();
+        xAxis.removeAllLimitLines();
+    }
+    public void addLimitLines()
     {
         XAxis xAxis = chart.getXAxis();
         xAxis.setTextSize(10f);
@@ -214,9 +302,30 @@ public class LineChartFragment extends Fragment implements OnChartValueSelectedL
     @Override
     public void onValueSelected(Entry e, Highlight h)
     {
+        Toast toast;
+        double cena = 0.0502;
         Context context = this.getActivity().getApplicationContext();
-        Toast toast = Toast.makeText(context, "Spotreba o "+(int)e.getX()+"h : "+e.getY()+" W Jednotková cena: "+e.getY()*0.13+" €", Toast.LENGTH_SHORT);
-        toast.show();
+        if(drawingChart.equals("day")) {
+            toast = Toast.makeText(context, "Spotreba o " + (int) e.getX() + "h : " + e.getY() + " Wh, Jednotková cena: "
+                    + String.format("%.2f", e.getY() * (cena/1000)) + " €", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        else
+        {
+            Date date = new Date();
+            SimpleDateFormat df = new SimpleDateFormat("dd MMM yyyy");
+            Calendar cal = Calendar.getInstance();
+            cal.setTime ( date ); // convert your date to Calendar object
+            int daysToDecrement = - (int) e.getX();
+            cal.add(Calendar.DATE, daysToDecrement);
+            date = cal.getTime(); // again get back your date object
+            String dat = df.format(date);
+            toast = Toast.makeText(context, "Spotreba "+ dat +" " + e.getY()
+                    + " KWh, Jednotková cena: " + String.format("%.2f", e.getY() * cena) + " €", Toast.LENGTH_SHORT);
+            toast.show();
+
+        }
+
     }
 
     @Override

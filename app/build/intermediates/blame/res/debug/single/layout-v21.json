@@ -1,34 +1,18 @@
 [
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\layout-v21\\notification_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout-v21\\notification_action.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\layout-v21\\notification_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Samuel\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\Samuel\\.android\\build-cache\\cd8184d64bfb0eef431444db2db1459e879b8bb1\\output\\res\\layout-v21\\notification_template_icon_group.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\layout-v21\\notification_action_tombstone.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout-v21\\notification_action_tombstone.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\Samuel Šušoliak\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\327e4de50eb27e00940e7600bdebd8f7\\res\\layout-v21\\notification_template_icon_group.xml"
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout-v21\\notification_template_icon_group.xml"
     }
 ]
