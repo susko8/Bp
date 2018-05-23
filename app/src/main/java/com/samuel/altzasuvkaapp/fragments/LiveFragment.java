@@ -48,6 +48,7 @@ public class LiveFragment extends Fragment {
     LineChart chart;
     private Thread thread;
     private boolean doRun =true;
+    private String toDraw = "temp";
 
     @Nullable
     @Override
@@ -84,8 +85,8 @@ public class LiveFragment extends Fragment {
 
         YAxis leftAxis = chart.getAxisLeft();
         leftAxis.setTextColor(Color.BLACK);
-//        leftAxis.setAxisMaximum(35f);
-//        leftAxis.setAxisMinimum(15f);
+        leftAxis.setAxisMaximum(35f);
+        leftAxis.setAxisMinimum(15f);
         leftAxis.setDrawGridLines(true);
 
         YAxis rightAxis = chart.getAxisRight();
@@ -115,10 +116,12 @@ public class LiveFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 if (position == 0) {
-                    //dosomething
+                    toDraw = "temp";
+                    refreshChart();
                 }
                 if (position == 1) {
-                    //dosomething
+                    toDraw="hum";
+                    refreshChart();
                 }
             }
 
@@ -134,6 +137,11 @@ public class LiveFragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("spinner", spinner.getSelectedItemPosition()); //uloz poziciu spinnera
+    }
+
+    public void refreshChart()
+    {
+        chart.getLineData().clearValues();
     }
 
     private void ListenToData()
@@ -187,6 +195,7 @@ public class LiveFragment extends Fragment {
     }
 
     private void addEntry() {
+        float val;
         LineData data = chart.getData();
         if (data != null) {
 
@@ -196,12 +205,17 @@ public class LiveFragment extends Fragment {
                 set = createSet();
                 data.addDataSet(set);
             }
-            float val=(float) ((MainActivity)getActivity()).getValue1();
+            if(toDraw.equals("temp")) {
+               val = (float) ((MainActivity) getActivity()).getValue1();
+            }
+            else
+            {
+                val = (float) ((MainActivity) getActivity()).getValue2();
+            }
             Entry entry= new Entry(data.getEntryCount(),val);
             data.addEntry((entry),0);
             data.notifyDataChanged();
 
-            // let the chart know it's data has changed
             chart.notifyDataSetChanged();
 
             // limit the number of visible entries

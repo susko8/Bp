@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
     private static final UUID LED = UUID.fromString("EF680300-9B35-4933-9B10-52FFA9740042");
     private static final UUID BLINK = UUID.fromString("EF680301-9B35-4933-9B10-52FFA9740042");
     //premenne pre pristup k nameranym hodnotam
-    public int value1;
+    public float value1;
     public int value2;
     //arraylist devicov
     ArrayList<BTDevice> devices = new ArrayList<>();
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity
         this.mBluetoothDevice = mBluetoothDevice;
     }
 
-    public int getValue1()
+    public float getValue1()
     {
         return value1;
     }
@@ -611,10 +611,13 @@ public class MainActivity extends AppCompatActivity
                 super.onCharacteristicChanged(gatt, characteristic);
                 Log.e("!!!","CHANGE CALLED!!!");
                 Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0).toString());
+                //Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,1).toString());
                 onCharacteristicRead(gatt,characteristic,BluetoothGatt.GATT_SUCCESS);
                 if(characteristic.getUuid().equals(TEMPERATURE))
                 {
                     value1=characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0);
+                    final float dec =characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,1);
+                    value1 = value1+dec/100;
                     mHandler.post(new Runnable() {
                         @Override
                         public void run() {

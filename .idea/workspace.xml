@@ -13,59 +13,24 @@
   <component name="ChangeListManager">
     <list default="true" id="7973eb14-ae79-4608-875c-c73bbee6c278" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/samuel/altzasuvkaapp/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/samuel/altzasuvkaapp/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/Intervals.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/Intervals.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$1$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$4.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$5.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$6.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$7$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$7$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$7$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$7$2.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$7.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$DeviceListAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity$DeviceListAdapter.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/MainActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$menu.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$mipmap.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$mipmap.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment$4.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/ConfigFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/HwConfigFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/HwConfigFragment$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/HwConfigFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/HwConfigFragment.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LineChartFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LineChartFragment.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LiveFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LiveFragment$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LiveFragment$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LiveFragment$2.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LiveFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LiveFragment$3.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LiveFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/LiveFragment.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/MainFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/samuel/altzasuvkaapp/fragments/MainFragment.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/resources-debug.ap_" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/config_fragment.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/config_fragment.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/Intervals.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/Intervals.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/ConfigFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/ConfigFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/HwConfigFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/HwConfigFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LineChartFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LineChartFragment.java" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LiveFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LiveFragment.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/config_fragment.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/config_fragment.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/MainFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/MainFragment.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="AltZasuvkaApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,7 +75,7 @@
       <file leaf-file-name="ConfigFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/ConfigFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
+            <state relative-caret-position="-924">
               <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="64" />
               <folding />
             </state>
@@ -120,19 +85,24 @@
       <file leaf-file-name="HwConfigFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/HwConfigFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
+            <state relative-caret-position="488">
               <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LiveFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LiveFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LiveFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="198" column="71" lean-forward="false" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="71" />
-              <folding />
+            <state relative-caret-position="362">
+              <caret line="85" column="45" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="45" />
+              <folding>
+                <element signature="e#5077#5078#0" expanded="true" />
+                <element signature="e#5126#5127#0" expanded="true" />
+                <element signature="e#8371#8372#0" expanded="true" />
+                <element signature="e#8401#8402#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,7 +110,7 @@
       <file leaf-file-name="LineChartFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LineChartFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50">
+            <state relative-caret-position="5565">
               <caret line="305" column="43" lean-forward="false" selection-start-line="305" selection-start-column="43" selection-end-line="305" selection-end-column="43" />
               <folding />
             </state>
@@ -150,18 +120,18 @@
       <file leaf-file-name="CakeFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/CakeFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="189">
               <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="623" column="17" lean-forward="true" selection-start-line="623" selection-start-column="17" selection-end-line="623" selection-end-column="17" />
+            <state relative-caret-position="1057">
+              <caret line="618" column="31" lean-forward="false" selection-start-line="618" selection-start-column="31" selection-end-line="618" selection-end-column="31" />
               <folding>
                 <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#initPermission#0;class#MainActivity#0" expanded="false" />
@@ -170,18 +140,28 @@
                 <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onActivityResult#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#notAllowedAlert#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#12329#12372#0" expanded="false" />
+                <element signature="e#12333#12376#0" expanded="false" />
                 <element signature="method#onNavigationItemSelected#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onSaveInstanceState#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#startBluetooth#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#openBluetoothMenu#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#scanLeDevice#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#23005#23006#0" expanded="true" />
-                <element signature="e#23045#23046#0" expanded="true" />
-                <element signature="e#23104#23105#0" expanded="true" />
-                <element signature="e#23144#23145#0" expanded="true" />
+                <element signature="e#23009#23010#0" expanded="true" />
+                <element signature="e#23049#23050#0" expanded="true" />
+                <element signature="e#23108#23109#0" expanded="true" />
+                <element signature="e#23148#23149#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,8 +169,8 @@
       <file leaf-file-name="MainFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/MainFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="126" column="58" lean-forward="false" selection-start-line="125" selection-start-column="8" selection-end-line="126" selection-end-column="58" />
+            <state relative-caret-position="187">
+              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -235,6 +215,8 @@
       <find>enableA</find>
       <find>addLimit</find>
       <find>toast</find>
+      <find>valu</find>
+      <find>value1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2303,17 +2285,17 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/live_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/CakeFragment.java" />
         <option value="$PROJECT_DIR$/gradle.properties" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/MainFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LiveFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/config_fragment.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/Intervals.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LineChartFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/ConfigFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/HwConfigFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/MainFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LiveFragment.java" />
       </list>
     </option>
   </component>
@@ -2375,42 +2357,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
-            <path>
-              <item name="AltZasuvkaApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="AltZasuvkaApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="AltZasuvkaApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="altzasuvkaapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AltZasuvkaApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="altzasuvkaapp" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="fragments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AltZasuvkaApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="AltZasuvkaApp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
             <path>
               <item name="AltZasuvkaApp" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -2419,10 +2370,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2434,7 +2383,7 @@
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.profiler.active" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1527082724917" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1527085796474" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -2793,7 +2742,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526996289192</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Set price added, prepared function for blinking">
+      <created>1527082779547</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1527082779547</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2813,24 +2769,24 @@
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26771653" sideWeight="0.30021483" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26771653" sideWeight="0.7024705" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26771653" sideWeight="0.7024705" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845894" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3952739" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32620922" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15789473" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1745435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -2844,8 +2800,8 @@
       <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3239595" sideWeight="0.4935275" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="554" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3952739" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956952" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2893,7 +2849,8 @@
     <MESSAGE value="test commit" />
     <MESSAGE value="2" />
     <MESSAGE value="Dataset for Linechart" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dataset for Linechart" />
+    <MESSAGE value="Set price added, prepared function for blinking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set price added, prepared function for blinking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2937,65 +2894,65 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/os/Parcelable.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_devices.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="37" column="32" lean-forward="false" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/BTController.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/BTController.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_fragment.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="658">
           <caret line="123" column="21" lean-forward="false" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listitem_device.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listitem_device.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/line_fragment.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/line_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1025">
           <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/live_fragment.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/live_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gradle.properties">
@@ -3006,43 +2963,43 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/cake_fragment.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/cake_fragment.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/BTDevice.java">
@@ -3053,14 +3010,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
@@ -3079,50 +3036,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_hw_config.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="50" column="35" lean-forward="false" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/config_fragment.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
           <caret line="133" column="46" lean-forward="false" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/CakeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="189">
           <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding />
         </state>
@@ -3132,54 +3078,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/MainFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="126" column="58" lean-forward="false" selection-start-line="125" selection-start-column="8" selection-end-line="126" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LineChartFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50">
+        <state relative-caret-position="5565">
           <caret line="305" column="43" lean-forward="false" selection-start-line="305" selection-start-column="43" selection-end-line="305" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/HwConfigFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
+        <state relative-caret-position="488">
           <caret line="45" column="37" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LiveFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="198" column="71" lean-forward="false" selection-start-line="198" selection-start-column="31" selection-end-line="198" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/ConfigFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
+        <state relative-caret-position="-924">
           <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/MainFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="623" column="17" lean-forward="true" selection-start-line="623" selection-start-column="17" selection-end-line="623" selection-end-column="17" />
+        <state relative-caret-position="1057">
+          <caret line="618" column="31" lean-forward="false" selection-start-line="618" selection-start-column="31" selection-end-line="618" selection-end-column="31" />
           <folding>
             <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
             <element signature="method#initPermission#0;class#MainActivity#0" expanded="false" />
@@ -3188,17 +3133,30 @@
             <element signature="method#onStart#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onActivityResult#0;class#MainActivity#0" expanded="false" />
             <element signature="method#notAllowedAlert#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#12329#12372#0" expanded="false" />
+            <element signature="e#12333#12376#0" expanded="false" />
             <element signature="method#onNavigationItemSelected#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onSaveInstanceState#0;class#MainActivity#0" expanded="false" />
             <element signature="method#startBluetooth#0;class#MainActivity#0" expanded="false" />
             <element signature="method#openBluetoothMenu#0;class#MainActivity#0" expanded="false" />
             <element signature="method#scanLeDevice#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#23005#23006#0" expanded="true" />
-            <element signature="e#23045#23046#0" expanded="true" />
-            <element signature="e#23104#23105#0" expanded="true" />
-            <element signature="e#23144#23145#0" expanded="true" />
+            <element signature="e#23009#23010#0" expanded="true" />
+            <element signature="e#23049#23050#0" expanded="true" />
+            <element signature="e#23108#23109#0" expanded="true" />
+            <element signature="e#23148#23149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/samuel/altzasuvkaapp/fragments/LiveFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="85" column="45" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="45" />
+          <folding>
+            <element signature="e#5077#5078#0" expanded="true" />
+            <element signature="e#5126#5127#0" expanded="true" />
+            <element signature="e#8371#8372#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
           </folding>
         </state>
       </provider>

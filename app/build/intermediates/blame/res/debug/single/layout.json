@@ -48,12 +48,12 @@
         "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",

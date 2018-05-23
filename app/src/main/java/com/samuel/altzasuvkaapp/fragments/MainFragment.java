@@ -94,7 +94,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         Toast toast = Toast.makeText(context, "Bluetooth Disabled, cannot access activity", Toast.LENGTH_SHORT);
         toast.show();
     }
-    public void setValue1(int temp)
+    public void setValue1(float temp)
     {
       //  Log.e("!!!","SET VAL1 CALLED");
         value1.setText(temp+"°C");
