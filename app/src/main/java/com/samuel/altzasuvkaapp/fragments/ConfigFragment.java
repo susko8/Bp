@@ -89,12 +89,12 @@ public class ConfigFragment extends Fragment
                 {
                     intervaly.setCheapFrom(newVal);
                     saveSettings();
-                    toast.setText("Value set successfully");
+                    toast.setText("Hodnota nastavená");
                     toast.show();
                 }
                 else
                 {
-                    toast.setText("Cannot set this value");
+                    toast.setText("Nemôžem nastaviť");
                     toast.show();
                 }
     }
@@ -106,12 +106,12 @@ public class ConfigFragment extends Fragment
         if(newVal > intervaly.getCheapFrom()) {
             intervaly.setCheapTo(newVal);
             saveSettings();
-            toast.setText("Value set successfully");
+            toast.setText("Hodnota nastavená");
             toast.show();
         }
         else
         {
-           toast.setText("Cannot set this value");
+           toast.setText("Nemôžem nastaviť");
            toast.show();
 
         }
@@ -125,12 +125,12 @@ public class ConfigFragment extends Fragment
                 {
                     intervaly.setExpFrom(newVal);
                     saveSettings();
-                    toast.setText("Value set successfully");
+                    toast.setText("Hodnota nastavená");
                     toast.show();
                 }
                 else
                     {
-                        toast.setText("Cannot set this value");
+                        toast.setText("Nemôžem nastaviť");
                         toast.show();
                 }
             }
@@ -142,12 +142,12 @@ public class ConfigFragment extends Fragment
                 {
                     intervaly.setExpTo(newVal);
                     saveSettings();
-                    toast.setText("Value set successfully");
+                    toast.setText("Hodnota nastavená");
                     toast.show();
                 }
                 else
                 {
-                    toast.setText("Cannot set this value");
+                    toast.setText("Nemôžem nastaviť");
                     toast.show();
                 }
             }
@@ -165,8 +165,6 @@ public class ConfigFragment extends Fragment
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                // TODO Auto-generated method stub
             }
 
             @Override

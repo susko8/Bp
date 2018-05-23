@@ -1,12 +1,15 @@
 package com.samuel.altzasuvkaapp.fragments;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -14,20 +17,29 @@ import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.samuel.altzasuvkaapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CakeFragment extends Fragment
+public class CakeFragment extends Fragment implements OnChartValueSelectedListener
 {
     Spinner spinner;
     TextView spinnertext;
+    TextView info;
+    PieChart pieChart;
     int spinposition;
+    String showData;
+    List<PieEntry> entries;
+    View rootView;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -41,28 +53,61 @@ public class CakeFragment extends Fragment
     {
         if (savedInstanceState != null) //ak je nieco v bundli
             spinposition = savedInstanceState.getInt("spinner");
-        View rootView=inflater.inflate(R.layout.cake_fragment,container,false); //inflate layout
-        PieChart pieChart = (PieChart) rootView.findViewById(R.id.chartcake); //najdi graf v layoute
+        rootView=inflater.inflate(R.layout.cake_fragment,container,false); //inflate layout
+        pieChart = (PieChart) rootView.findViewById(R.id.chartcake); //najdi graf v layoute
+        info=(TextView)rootView.findViewById(R.id.cake_info);
+
+
+        //info.setVisibility(View.INVISIBLE);
+
         setSpinner(rootView);
-        List<PieEntry> entries = new ArrayList<>(); //graf data
-        //ina grafova magia podla dokumentacie
-        entries.add(new PieEntry(18.5f, "Obývačka"));
-        entries.add(new PieEntry(26.7f, "Kuchyňa"));
-        entries.add(new PieEntry(24.0f, "Spálňa"));
-        entries.add(new PieEntry(30.8f, "Kúpeľňa"));
-        PieDataSet set = new PieDataSet(entries, "");
-        set.setColors(ColorTemplate.COLORFUL_COLORS);
+        entries=new ArrayList<>();
+        showData="day";
+
         pieChart.setHardwareAccelerationEnabled(true);
         pieChart.animateY(1500);
+
         Description desc =  new Description();
         desc.setText("Spotreba jednotlivých miestností");
         //desc.setPosition(150,150);
         desc.setTextSize(18);
-        PieData data = new PieData(set);
         pieChart.setDescription(desc);
-        pieChart.setData(data);
-        pieChart.invalidate(); //
+        pieChart.setOnChartValueSelectedListener(this);
+        pieChart.invalidate();
+
         return rootView;
+    }
+
+    public void setData()
+    {
+        //graf data
+        entries.clear();
+        if(showData.equals("day")) {
+            entries.add(new PieEntry(18.5f, "Obývačka"));
+            entries.add(new PieEntry(26.7f, "Kuchyňa"));
+            entries.add(new PieEntry(24.0f, "Spálňa"));
+            entries.add(new PieEntry(30.8f, "Kúpeľňa"));
+        }
+        if(showData.equals("week"))
+        {
+            entries.add(new PieEntry(22f, "Obývačka"));
+            entries.add(new PieEntry(45f, "Kuchyňa"));
+            entries.add(new PieEntry(21f, "Spálňa"));
+            entries.add(new PieEntry(12f, "Kúpeľňa"));
+        }
+        if(showData.equals("month"))
+        {
+            entries.add(new PieEntry(23f, "Obývačka"));
+            entries.add(new PieEntry(40f, "Kuchyňa"));
+            entries.add(new PieEntry(30f, "Spálňa"));
+            entries.add(new PieEntry(7f, "Kúpeľňa"));
+        }
+
+        PieDataSet set = new PieDataSet(entries, "");
+        set.setColors(ColorTemplate.COLORFUL_COLORS);
+        PieData data = new PieData(set);
+        pieChart.setData(data);
+        pieChart.invalidate();
     }
     public void setSpinner(View rootView)
     {
@@ -79,19 +124,21 @@ public class CakeFragment extends Fragment
             {
                 if(position == 0)
                 {
-                    //spinnertext.setText("Spotreba za posledných 24 hodín");
+                    showData = "day";
+                    setData();
+                    info.setText("");
                 }
                 if(position == 1)
                 {
-                   // spinnertext.setText("Spotreba za poslednú hodinu");
+                    showData = "week";
+                    setData();
+                    info.setText("");
                 }
                 if(position == 2)
                 {
-                   // spinnertext.setText("Spotreba za posledný týždeň");
-                }
-                if(position == 3)
-                {
-                   // spinnertext.setText("Spotreba za posledný mesiac");
+                    showData = "month";
+                    setData();
+                    info.setText("");
                 }
             }
             @Override
@@ -102,6 +149,8 @@ public class CakeFragment extends Fragment
         });
         spinner.setSelection(spinposition); //ak nieco v bundli tak (re)setni
     }
+
+
     @Override
     public void onSaveInstanceState(Bundle outState)
     {
@@ -109,4 +158,31 @@ public class CakeFragment extends Fragment
         outState.putInt("spinner", spinner.getSelectedItemPosition()); //uloz poziciu spinner
     }
 
+    @Override
+    public void onValueSelected(Entry e, Highlight h)
+    {
+        double val = e.getY()/100;
+        String s="";
+        if(showData.equals("day"))
+        {
+            val = 5600*val;
+            s = "Spotreba miestnosti: "+ String.format("%.2f", val)+" Wh";
+        }
+        if(showData.equals("week"))
+        {
+            val = 39.2*val;
+            s = "Spotreba miestnosti: "+ String.format("%.2f", val)+" kWh";
+        }
+        if(showData.equals("month"))
+        {
+            val = 156.8*val;
+            s = "Spotreba miestnosti: "+ String.format("%.2f", val)+" kWh";
+        }
+        info.setText(s);
+    }
+
+    @Override
+    public void onNothingSelected() {
+
+    }
 }

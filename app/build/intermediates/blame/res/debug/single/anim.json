@@ -48,6 +48,10 @@
         "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\795b3818e4d9bdbf35478178e5a65bd7\\res\\anim\\design_snackbar_in.xml"
     },
     {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\set.xml",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\anim\\set.xml"
+    },
+    {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
         "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\795b3818e4d9bdbf35478178e5a65bd7\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },

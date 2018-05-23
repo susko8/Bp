@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -32,6 +33,7 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.MainActivity;
@@ -41,7 +43,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class LiveFragment extends Fragment {
+public class LiveFragment extends Fragment implements OnChartValueSelectedListener {
     TextView label; //nazov grafu podla spinnera
     Spinner spinner; //spinner
     int spinposition; //poz. spinnera
@@ -85,15 +87,18 @@ public class LiveFragment extends Fragment {
 
         YAxis leftAxis = chart.getAxisLeft();
         leftAxis.setTextColor(Color.BLACK);
-        leftAxis.setAxisMaximum(35f);
-        leftAxis.setAxisMinimum(15f);
+//        leftAxis.setAxisMaximum(35f);
+//        leftAxis.setAxisMinimum(15f);
         leftAxis.setDrawGridLines(true);
 
         YAxis rightAxis = chart.getAxisRight();
         rightAxis.setEnabled(false);
-
-
-
+        Description desc =  new Description();
+        desc.setText("Aktuálne hodnoty veličiny");
+        //desc.setPosition(150,150);
+        desc.setTextSize(18);
+        chart.setDescription(desc);
+        chart.setOnChartValueSelectedListener(this);
 
 
 
@@ -190,7 +195,7 @@ public class LiveFragment extends Fragment {
     {
         getActivity().getFragmentManager().beginTransaction().remove(this).commit();
         Context context = ((MainActivity)getActivity());
-        Toast toast = Toast.makeText(context, "Device disconnected, Live Metering Stopped", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(context, "Zariadenie odpojené, Live Metering ukončený", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -206,12 +211,13 @@ public class LiveFragment extends Fragment {
                 data.addDataSet(set);
             }
             if(toDraw.equals("temp")) {
-               val = (float) ((MainActivity) getActivity()).getValue1();
+               val = (float)((MainActivity) getActivity()).getValue1();
             }
             else
             {
-                val = (float) ((MainActivity) getActivity()).getValue2();
+                val = (float)((MainActivity) getActivity()).getValue2();
             }
+            Log.e("!!!",Float.valueOf(val).toString());
             Entry entry= new Entry(data.getEntryCount(),val);
             data.addEntry((entry),0);
             data.notifyDataChanged();
@@ -232,7 +238,7 @@ public class LiveFragment extends Fragment {
 
     private LineDataSet createSet() {
 
-        LineDataSet set = new LineDataSet(null, "DataSet 1");
+        LineDataSet set = new LineDataSet(null, "DataSet");
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
         set.setColor(ColorTemplate.getHoloBlue());
         set.setCircleColor(Color.BLUE);
@@ -269,6 +275,19 @@ public class LiveFragment extends Fragment {
     {
         Log.e("!!!","DESTROY CALLED!!!");
         super.onDestroy();
+    }
+
+    @Override
+    public void onValueSelected(Entry e, Highlight h) {
+        Toast toast;
+        Context context = this.getActivity().getApplicationContext();
+            toast = Toast.makeText(context, Float.valueOf(e.getY()).toString(), Toast.LENGTH_SHORT);
+            toast.show();
+    }
+
+    @Override
+    public void onNothingSelected() {
+
     }
 }
 

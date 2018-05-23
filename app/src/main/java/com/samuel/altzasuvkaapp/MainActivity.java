@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity
             if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action))
             {
                 mainFragment.setConnectedStatus(mBluetoothDevice);
-                Toast toast = Toast.makeText(context, "Device Connected, You can fully use App now!", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(context, "Zariadenie pripojené, môžte plne využívať aplikáciu", Toast.LENGTH_SHORT);
                 connectedStatus = true;
                 toast.show();
             }
@@ -320,7 +320,7 @@ public class MainActivity extends AppCompatActivity
     public void notAllowedAlert()
     {
         Context context = MainActivity.this;
-        Toast toast = Toast.makeText(context, "Not Allowed ! Device NOT Connected !", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(context, "Neprístupné, musíte pripojiť zariadenia", Toast.LENGTH_SHORT);
         toast.show();
     }
 
@@ -451,7 +451,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Context context = getApplicationContext();
-                    Toast toast = Toast.makeText(context, "Connecting to " + devices.get(position).getName(), Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(context, "Pripájam k" + devices.get(position).getName(), Toast.LENGTH_SHORT);
                     mBluetoothDevice=devices.get(position).bluetoothDevice;
                     BTConnect();
                     dialog.cancel();
@@ -609,8 +609,8 @@ public class MainActivity extends AppCompatActivity
             public void onCharacteristicChanged(BluetoothGatt gatt, final BluetoothGattCharacteristic characteristic)
             {
                 super.onCharacteristicChanged(gatt, characteristic);
-                Log.e("!!!","CHANGE CALLED!!!");
-                Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0).toString());
+                //Log.e("!!!","CHANGE CALLED!!!");
+                //Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0).toString());
                 //Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,1).toString());
                 onCharacteristicRead(gatt,characteristic,BluetoothGatt.GATT_SUCCESS);
                 if(characteristic.getUuid().equals(TEMPERATURE))

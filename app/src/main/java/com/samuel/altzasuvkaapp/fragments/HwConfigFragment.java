@@ -91,7 +91,7 @@ public class HwConfigFragment extends Fragment implements View.OnClickListener {
         {
             Context context = getActivity().getApplicationContext();
             ((MainActivity) activity).blinker();
-            Toast toast = Toast.makeText(context, "blinking", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(context, "Blikám", Toast.LENGTH_SHORT);
             toast.show();
         }
     }
