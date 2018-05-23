@@ -7,9 +7,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -22,14 +25,11 @@ import com.samuel.altzasuvkaapp.R;
 
 public class ConfigFragment extends Fragment
 {
-    TextView instructions;
-    SeekBar seeker;
-    TextView seekerState;
-    int defaultProgress=5;
     NumberPicker CheapFrom;
     NumberPicker CheapTo;
     NumberPicker ExpFrom;
     NumberPicker ExpTo;
+    EditText price;
     Intervals intervaly;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
@@ -53,7 +53,7 @@ public class ConfigFragment extends Fragment
     @Override
     public void onSaveInstanceState(Bundle outState)
     {
-        super.onSaveInstanceState(outState);
+        saveSettings(); super.onSaveInstanceState(outState);
     }
     public void setPickers(View rootView)
     {
@@ -63,6 +63,8 @@ public class ConfigFragment extends Fragment
         CheapFrom=(NumberPicker) rootView.findViewById(R.id.cheap_picker_from);
         ExpTo=(NumberPicker) rootView.findViewById(R.id.exp_picker_to);
         ExpFrom=(NumberPicker) rootView.findViewById(R.id.exp_picker_from);
+        price=(EditText) rootView.findViewById(R.id.prizeInput);
+        price.setText(String.valueOf(intervaly.getPrice()));
         CheapTo.setMaxValue(24);
         CheapFrom.setMaxValue(24);
         ExpTo.setMaxValue(24);
@@ -150,6 +152,29 @@ public class ConfigFragment extends Fragment
                 }
             }
         });
+        price.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(!s.toString().isEmpty() || s.length()>0 || count !=0) {
+                    intervaly.setPrice(Double.parseDouble(s.toString()));
+                    toast.setText("Cena bola nastavená");
+                    toast.show();
+                    saveSettings();
+                }
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                // Place the logic here for your output edittext
+            }
+        });
 
     }
     public void saveSettings()
@@ -171,5 +196,6 @@ public class ConfigFragment extends Fragment
             intervaly = gson.fromJson(json, Intervals.class);
         }
     }
+
 
 }

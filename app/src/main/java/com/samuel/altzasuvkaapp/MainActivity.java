@@ -9,6 +9,7 @@ import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
+import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
 import android.content.BroadcastReceiver;
@@ -47,6 +48,9 @@ import com.samuel.altzasuvkaapp.fragments.HwConfigFragment;
 import com.samuel.altzasuvkaapp.fragments.LineChartFragment;
 import com.samuel.altzasuvkaapp.fragments.LiveFragment;
 import com.samuel.altzasuvkaapp.fragments.MainFragment;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
@@ -68,6 +72,8 @@ public class MainActivity extends AppCompatActivity
     private static final UUID ENVIRONMENT_SERVICE=UUID.fromString("EF680200-9B35-4933-9B10-52FFA9740042");
     private static final UUID TEMPERATURE=UUID.fromString("EF680201-9B35-4933-9B10-52FFA9740042");
     private static final UUID HUMIDITY=UUID.fromString("EF680203-9B35-4933-9B10-52FFA9740042");
+    private static final UUID LED = UUID.fromString("EF680300-9B35-4933-9B10-52FFA9740042");
+    private static final UUID BLINK = UUID.fromString("EF680301-9B35-4933-9B10-52FFA9740042");
     //premenne pre pristup k nameranym hodnotam
     public int value1;
     public int value2;
@@ -480,12 +486,41 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    BluetoothGatt bluetoothGatt;
+
+    public void blinker()
+    {
+        Log.e("w!!!!", "called blinker ");
+        BluetoothGattCharacteristic characteristic = bluetoothGatt.getService(LED).getCharacteristic(BLINK);
+        blink(characteristic);
+
+    }
+    public void blink(BluetoothGattCharacteristic characteristic)
+    {
+        int data = 1; // whatever goes here
+        if (mBluetoothAdapter == null || bluetoothGatt == null) {
+            Log.e("w!!!!", "BluetoothAdapter not initialized");
+            return;
+        }
+
+        Log.e("w!!!!", "characteristic " + characteristic.toString());
+
+            Log.e("w!!!!", "data write ");
+
+            characteristic.setValue(data,BluetoothGattCharacteristic.FORMAT_UINT8,0);
+
+            bluetoothGatt.writeCharacteristic(characteristic);
+
+
+    }
+
     private void BTConnect()
     {
         mBluetoothDevice.connectGatt(this, false, new BluetoothGattCallback() {
             @Override
             public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState)
             {
+                bluetoothGatt = gatt;
                 super.onConnectionStateChange(gatt, status, newState);
                 if(status==BluetoothGatt.GATT_SUCCESS && newState == BluetoothProfile.STATE_CONNECTED)
                 {
@@ -500,6 +535,7 @@ public class MainActivity extends AppCompatActivity
                     gatt.disconnect();
                     connectedStatus=false;
                 }
+
             }
 
             public boolean setCharacteristicNotification(BluetoothGatt gatt, UUID serviceUuid, UUID characteristicUuid,
@@ -573,8 +609,8 @@ public class MainActivity extends AppCompatActivity
             public void onCharacteristicChanged(BluetoothGatt gatt, final BluetoothGattCharacteristic characteristic)
             {
                 super.onCharacteristicChanged(gatt, characteristic);
-               // Log.e("!!!","CHANGE CALLED!!!");
-             //   Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0).toString());
+                Log.e("!!!","CHANGE CALLED!!!");
+                Log.e("!!!",characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8,0).toString());
                 onCharacteristicRead(gatt,characteristic,BluetoothGatt.GATT_SUCCESS);
                 if(characteristic.getUuid().equals(TEMPERATURE))
                 {
@@ -582,7 +618,7 @@ public class MainActivity extends AppCompatActivity
                     mHandler.post(new Runnable() {
                         @Override
                         public void run() {
-                            mainFragment.setValue1(characteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0));
+                            mainFragment.setValue1(value1);
                         }
                     });
                 }

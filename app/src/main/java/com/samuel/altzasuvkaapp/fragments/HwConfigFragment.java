@@ -1,5 +1,6 @@
 package com.samuel.altzasuvkaapp.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,18 +10,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.samuel.altzasuvkaapp.Intervals;
+import com.samuel.altzasuvkaapp.MainActivity;
 import com.samuel.altzasuvkaapp.R;
 
-public class HwConfigFragment extends Fragment {
+public class HwConfigFragment extends Fragment implements View.OnClickListener {
 
     TextView instructions;
     SeekBar seeker;
     TextView seekerState;
     int defaultProgress = 5;
+    Button blink;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +42,8 @@ public class HwConfigFragment extends Fragment {
             defaultProgress = savedInstanceState.getInt("progress"); //ulozena pozicia spinner, sup ju tam
         }
         View rootView = inflater.inflate(R.layout.fragment_hw_config, container, false);
+        blink = (Button) rootView.findViewById(R.id.btn_blink);
+        blink.setOnClickListener(this);
         instructions = (TextView) rootView.findViewById(R.id.text);
         instructions.setText("TIP: Pred odoslaním nastavení do zásuvky sa odporúča si ju najprv identifikovať. Po stlačení " +
                 "tlačidla sa na zásuvke rozbliká sveteľná dióda.");
@@ -76,4 +83,16 @@ public class HwConfigFragment extends Fragment {
         outState.putInt("progress",defaultProgress ); //uloz funguje pri otacani
     }
 
+    @Override
+    public void onClick(View v) {
+        Activity activity = getActivity();
+        MainActivity myactivity = (MainActivity) activity;
+        if(v==blink)
+        {
+            Context context = getActivity().getApplicationContext();
+            ((MainActivity) activity).blinker();
+            Toast toast = Toast.makeText(context, "blinking", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
 }

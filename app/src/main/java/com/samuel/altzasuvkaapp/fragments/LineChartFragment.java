@@ -303,7 +303,7 @@ public class LineChartFragment extends Fragment implements OnChartValueSelectedL
     public void onValueSelected(Entry e, Highlight h)
     {
         Toast toast;
-        double cena = 0.0502;
+        double cena = intervaly.getPrice();
         Context context = this.getActivity().getApplicationContext();
         if(drawingChart.equals("day")) {
             toast = Toast.makeText(context, "Spotreba o " + (int) e.getX() + "h : " + e.getY() + " Wh, Jednotková cena: "

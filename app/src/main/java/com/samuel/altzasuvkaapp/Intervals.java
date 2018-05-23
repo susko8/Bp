@@ -8,6 +8,7 @@ public class Intervals implements Serializable {
     private int CheapTo;
     private int ExpFrom;
     private int ExpTo;
+    private double price;
 
     Intervals()
     {
@@ -15,7 +16,17 @@ public class Intervals implements Serializable {
         CheapTo=9;
         ExpFrom=21;
         ExpTo=23;
+        price = 0.0502;
     }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public int getCheapFrom() {
         return CheapFrom;
     }

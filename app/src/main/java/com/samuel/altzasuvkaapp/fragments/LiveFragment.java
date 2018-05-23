@@ -84,8 +84,8 @@ public class LiveFragment extends Fragment {
 
         YAxis leftAxis = chart.getAxisLeft();
         leftAxis.setTextColor(Color.BLACK);
-        leftAxis.setAxisMaximum(35f);
-        leftAxis.setAxisMinimum(0f);
+//        leftAxis.setAxisMaximum(35f);
+//        leftAxis.setAxisMinimum(15f);
         leftAxis.setDrawGridLines(true);
 
         YAxis rightAxis = chart.getAxisRight();
@@ -118,12 +118,6 @@ public class LiveFragment extends Fragment {
                     //dosomething
                 }
                 if (position == 1) {
-                    //dosomething
-                }
-                if (position == 2) {
-                    //dosomething
-                }
-                if (position == 3) {
                     //dosomething
                 }
             }
