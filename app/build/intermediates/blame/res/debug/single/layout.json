@@ -48,12 +48,12 @@
         "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
@@ -220,6 +220,10 @@
         "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_room.xml",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\layout\\list_item_room.xml"
+    },
+    {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\line_fragment.xml",
         "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\layout\\line_fragment.xml"
     },
@@ -234,6 +238,10 @@
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
         "source": "C:\\Users\\Samko\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\91ad923ab9847a922284b2cf1e427ee1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_rooms.xml",
+        "source": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\src\\main\\res\\layout\\dialog_rooms.xml"
     },
     {
         "merged": "C:\\Users\\Public\\AndroidStudioProjects\\AltZasuvkaApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\live_fragment.xml",

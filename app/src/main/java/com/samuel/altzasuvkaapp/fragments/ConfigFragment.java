@@ -3,16 +3,22 @@ package com.samuel.altzasuvkaapp.fragments;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -22,9 +28,17 @@ import com.google.gson.Gson;
 import com.samuel.altzasuvkaapp.Intervals;
 import com.samuel.altzasuvkaapp.R;
 
+import java.util.List;
 
-public class ConfigFragment extends Fragment
+
+public class ConfigFragment extends Fragment implements View.OnClickListener
 {
+    Button addRoomButton;
+    Button removeRoomButton;
+    List<String> rooms;
+    TextView roomInput;
+    RoomListAdapter adapter = new RoomListAdapter();
+    ListView listRoomView;
     NumberPicker CheapFrom;
     NumberPicker CheapTo;
     NumberPicker ExpFrom;
@@ -39,6 +53,7 @@ public class ConfigFragment extends Fragment
         setRetainInstance(true);//uloz instanciu
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Nastavenia Aplikácie");
         intervaly = (Intervals) arguments.getSerializable("Intervaly");
+        rooms = intervaly.getRooms();
         RetrieveSettings();
     }
 
@@ -47,6 +62,11 @@ public class ConfigFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
         View rootView=inflater.inflate(R.layout.config_fragment,container,false); //inflatni layout
+        addRoomButton = (Button) rootView.findViewById(R.id.add_room);
+        addRoomButton.setOnClickListener(this);
+        removeRoomButton = (Button) rootView.findViewById(R.id.remove_room);
+        removeRoomButton.setOnClickListener(this);
+        roomInput = (TextView) rootView.findViewById(R.id.roomInput);
         setPickers(rootView);
         return rootView;
     }
@@ -195,5 +215,88 @@ public class ConfigFragment extends Fragment
         }
     }
 
+    @Override
+    public void onClick(View v)
+    {
+        if(v==addRoomButton)
+        {
+            if(!roomInput.getText().toString().matches("")) {
+                intervaly.getRooms().add(roomInput.getText().toString());
+                saveSettings();
+                RetrieveSettings();
+                Context context = getActivity().getApplicationContext();
+                Toast toast = Toast.makeText(context, "Pridaná "+ roomInput.getText().toString(), Toast.LENGTH_SHORT);
+                toast.show();
+            }
+            else
+            {
+                Context context = getActivity().getApplicationContext();
+                Toast toast = Toast.makeText(context, "Musíte zadať meno miestnosti", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        }
+        if(v==removeRoomButton)
+        {
+            rooms = intervaly.getRooms();
+            AlertDialog.Builder mBuilder = new AlertDialog.Builder(getActivity());
+            View mView = getActivity().getLayoutInflater().inflate(R.layout.dialog_rooms, null);
+            listRoomView = (ListView) mView.findViewById(R.id.room_list);
+            listRoomView.setAdapter(adapter);
+            mBuilder.setCancelable(true);
+            mBuilder.setView(mView);
+            mBuilder.setNegativeButton("Zavrieť", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            final AlertDialog dialog = mBuilder.create();
+            listRoomView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Context context = getActivity().getApplicationContext();
+                    Toast toast = Toast.makeText(context, "Miestnosť " + rooms.get(position) + " bola vymazaná", Toast.LENGTH_SHORT);
+                    intervaly.getRooms().remove(position);
+                    saveSettings();
+                    RetrieveSettings();
+                    toast.show();
+                    dialog.cancel();
+
+                }
+            });
+           dialog.show();
+        }
+    }
+
+    public class RoomListAdapter extends BaseAdapter
+    {
+        public RoomListAdapter() {
+            super();
+        }
+
+        @Override
+        public int getCount() {
+            return intervaly.getRooms().size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return rooms.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            convertView = getActivity().getLayoutInflater().inflate(R.layout.list_item_room, null);
+            TextView roomName = (TextView) convertView.findViewById(R.id.room_name);
+            roomName.setText(rooms.get(position));
+            return convertView;
+
+        }
+    }
 
 }

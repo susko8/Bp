@@ -245,6 +245,9 @@ public class MainActivity extends AppCompatActivity
         if (null == savedInstanceState) //ak tam nebol fragment nahod defaultny
         {
             FragmentManager fm = getFragmentManager(); //android si posledny fragment automaticky uklada do Bundlu
+            Bundle data = new Bundle();
+            data.putSerializable("Intervaly", intervaly);
+            mainFragment.setArguments(data);
             fm.beginTransaction().replace(R.id.content_frame, mainFragment).commit();
         }
 
@@ -451,7 +454,7 @@ public class MainActivity extends AppCompatActivity
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Context context = getApplicationContext();
-                    Toast toast = Toast.makeText(context, "Pripájam k" + devices.get(position).getName(), Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(context, "Pripájam k " + devices.get(position).getName(), Toast.LENGTH_SHORT);
                     mBluetoothDevice=devices.get(position).bluetoothDevice;
                     BTConnect();
                     dialog.cancel();
